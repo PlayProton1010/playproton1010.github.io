@@ -17,22 +17,14 @@
 
   
   #color-changing-text {
-  color: red; 
+  background: rgb(0,0,190);
+background: linear-gradient(90deg, rgba(0,0,190,1) 36%, rgba(0,0,0,1) 100%);
   transition: color 1s ease-in-out;
+}
+
+p {
   font-size: 60px;
 }
 
   
 </style>
-<script>
-  const colorChangingText = document.getElementById('color-changing-text');
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-let currentColorIndex = 1; // Start on the second color ('orange')
-
-function changeColor() {
-  colorChangingText.style.color = colors[currentColorIndex];
-  currentColorIndex = (currentColorIndex + 1) % colors.length; 
-}
-
-setInterval(changeColor, 1000); // Change color every 1 second
-</script>
