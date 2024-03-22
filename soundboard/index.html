@@ -1,13 +1,19 @@
 <title>Proton | SoundBoard</title>
 
-<img src="http://soulsnatcher.bplaced.net/LDRYh.jpg" onclick="OffSound()" />
+<img src="./Audiobutton.png" onclick="OOF()" class="Button" />
+<audio id="OOF" src="./Roblox-death-sound.mp3"></audio>
 
 
+<style>
+ Button {
+ float: left
+ }
+</style>
 <script>
-  function OffSound() {
+  function OOF() {
   var audio = document.getElementById("OOF");
         audio.play();
 
   }
 </script>
-<audio id="OOF" src="./Roblox-death-sound.mp3"></audio>
+
