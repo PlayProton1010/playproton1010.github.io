@@ -1,6 +1,44 @@
 <script>
+// Your existing code
 sessionStorage.setItem("agUrl", "hvtrs8%2F-nmweg%2Cmg%2Frlcy-rmbnoz-aoppmrctkol%2F7369-rmbnoz");
 localStorage.setItem("encodedUrl", "hvtr%3A-%2Feomgne%2Ccmm");
-localStorage.setItem("pass", "1234");
-  </script>
-<iframe src="https://doge-proxy-six.vercel.app/student?" height="500" width="400" title="Iframe Example"></iframe>
+
+const characters = "abcdefghijklmnopqrstuvw0123456789012345";
+
+function getRandomThreeDigitNumber() { 
+  let result = "";
+  for (let i = 0; i < 3; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+
+function getRandomAlphanumericString(length) { 
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+
+var randomThreeDigitNumber = getRandomThreeDigitNumber();
+var randomAlphanumericString = getRandomAlphanumericString(5);
+var url = "/student?auth=" + randomAlphanumericString;
+var title = "Proton";
+
+history.pushState({}, title, url);
+
+// Iframe integration
+var iframeBaseURL = "https://doge-proxy-six.vercel.app/";
+var iframeSrc = iframeBaseURL + url;
+
+var iframe = document.querySelector('iframe'); 
+iframe.src = iframeSrc; 
+
+// Send encodedUrl when iframe loads 
+iframe.onload = function() {
+  iframe.contentWindow.postMessage(localStorage.getItem("encodedUrl"), 'https://doge-proxy-six.vercel.app'); 
+}
+</script>
+
+<iframe height="500" width="400" title="Iframe Example"></iframe> 
