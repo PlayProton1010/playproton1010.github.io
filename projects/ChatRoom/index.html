@@ -1,1 +1,11 @@
-<iframe src="https://e.widgetbot.io/channels/299881420891881473/355719584830980096" allow="clipboard-write; fullscreen" height="600" width="800"></iframe>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+  new Crate({
+    server: '299881420891881473',
+    channel: '355719584830980096'
+  })
+  crate.on('message', ({ message, channel }) => {
+  console.log(`New message in #${channel.name}`, message)
+})
+
+</script>
+
