@@ -1,7 +1,7 @@
 [
-  {
-"title": "Yohoho.io",
-"path": "/games/Yohoho/index.html",
-"image": "/assets/img/yohoho.jpeg"
-  },
+{
+"title": "Yohoho.io", 
+"path": "/assets/img/yohoho.png",
+"src": "/games/Yohoho/index.html"
+},
 ]
