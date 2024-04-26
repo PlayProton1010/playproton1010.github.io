@@ -1,7 +1,14 @@
 [
 {
 "title": "Yohoho.io", 
-"logo": "/assets/img/yohoho.png",
-"path": "/games/Yohoho/index.html"
+"logo": "/assets/img/yohoho.jpeg",
+"src": "/games/Yohoho/index.html"
 },
+
+{
+  "title": "Monkey Mart",
+  "logo": "/assets/img/monkey-mart.png",
+  "src": "/games/Monkey-Mart/monkey-mart/index.html"
+}
+
 ]
