@@ -1,0 +1,63 @@
+  #topbar {
+   background-color: #2f9eed;
+   padding: 5px 10px;
+   font-size: 20px;
+   font-weight: 600;
+   display: flex;
+   justify-content: space-between;
+  }
+
+  #topbar a {
+   color: white;
+   text-decoration: none;
+   padding: 5px 5px;
+   margin: 0 5px;
+   border-radius: 20px;
+  }
+
+  #topbar a:hover {
+   background-color: #8e8ba3;
+  }
+
+  #topbar .games {
+   display: flex;
+   align-items: center;
+  }
+
+  #topbar .games img {
+   padding-right: 5px;
+  }
+  
+  .image-container {
+  border-radius: 30px;
+}
+
+
+.image-container img { float: left; }
+   img {
+  max-width: 180;
+  height: 180;
+  border: 0;
+  cursor: pointer;
+  border-color: white;
+  border-radius: 25px;
+ }
+
+ .image-container {
+  float: left;
+  margin-left: 20px;
+   
+ }
+
+ img {
+  display: block;
+  margin: 0 auto;
+ }
+
+ p {
+  margin-top: 10px;
+  text-align: center;
+ }
+    body {
+    background-image: url("./Designer.png");
+  }
