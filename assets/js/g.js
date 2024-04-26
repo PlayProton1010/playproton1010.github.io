@@ -8,7 +8,7 @@ fetch('./assets/json/g.json')
       imageElement.href = image.src;
 
       const img = document.createElement('img');
-      img.src = image.path;
+      img.src = image.image;
       img.alt = image.title || 'ERROR';
       img.style.width = "90px";
       img.style.height = "140px";
@@ -16,9 +16,7 @@ fetch('./assets/json/g.json')
  
       imageElement.addEventListener("click", function (event) {
         event.preventDefault();
-
-        localStorage.setItem("Iframe", image.src);
-        window.location.href = "./go.html";
+        window.location.href = img.path;
       });
 
 
@@ -31,6 +29,3 @@ fetch('./assets/json/g.json')
     console.error('Error fetching JSON data:', error);
   });
 
-function home() {
-  window.location.href = "./index.html"
-}
