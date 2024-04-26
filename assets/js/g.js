@@ -8,8 +8,8 @@ fetch('./assets/json/g.json')
       imageElement.href = image.src;
 
       const img = document.createElement('img');
-      img.src = image.path;
-      img.alt = image.title || 'ERROR';
+      img.src = image.title;
+      img.title = image.title || 'ERROR';
       img.style.width = "90px";
       img.style.height = "140px";
       img.className = "classy";
@@ -18,7 +18,7 @@ fetch('./assets/json/g.json')
         event.preventDefault();
 
         
-        window.location.href = img.src;
+        window.location.href = img.path;
       });
 
 
