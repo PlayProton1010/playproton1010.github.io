@@ -8,7 +8,7 @@ fetch('./assets/json/g.json')
       imageElement.href = image.src;
 
       const img = document.createElement('img');
-      img.src = image.image;
+      img.src = image.path;
       img.alt = image.title || 'ERROR';
       img.style.width = "90px";
       img.style.height = "140px";
@@ -16,7 +16,9 @@ fetch('./assets/json/g.json')
  
       imageElement.addEventListener("click", function (event) {
         event.preventDefault();
-        window.location.href = img.path;
+
+        
+        window.location.href = img.src;
       });
 
 
@@ -29,3 +31,6 @@ fetch('./assets/json/g.json')
     console.error('Error fetching JSON data:', error);
   });
 
+function home() {
+  window.location.href = "./index.html"
+}
