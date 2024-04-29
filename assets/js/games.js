@@ -10,8 +10,8 @@ fetch('./assets/json/g.json')
       const img = document.createElement('img');
       img.src = image.logo;
       img.alt = image.title || 'ERROR';
-      img.style.width = "130px";
-      img.style.height = "130px";
+      img.style.width = "150px";
+      img.style.height = "150px";
       img.className = "classy";
  
       imageElement.addEventListener("click", function (event) {
