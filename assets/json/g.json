@@ -9,6 +9,11 @@
   "title": "Monkey Mart",
   "logo": "/assets/img/monkey-mart.png",
   "src": "/games/Monkey-Mart/monkey-mart/index.html"
-}
+},
 
+  {
+"title": "DriveMad",
+"logo": "/assets/img/DriveMad.jpg",
+"src": "/games/DriveMad/index.html"
+  }
 ]
