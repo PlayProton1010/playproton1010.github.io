@@ -57,6 +57,11 @@
 "title": "tanuki sunset",
 "logo": "/assets/img/TS.png",
 "src": "/games/tanuki-sunset/index.html"
-  }
-  
+  },
+
+   {
+"title": "Core Ball",
+"logo": "/assets/img/CB.jpeg",
+"src": "/games/core-ball/index.html"
+   }
 ]
