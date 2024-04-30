@@ -39,5 +39,18 @@
 "title": "Bitlife",
 "logo": "/assets/img/bitlife.png",
 "src": "/games/Bitlife/index.html"
+  },
+
+  {
+"title": "Subway Surfers",
+"logo": "/assets/img/splash.jpg",
+"src": "/games/Subway-Surfers/index.html"
+  },
+
+    {
+"title": "Subway Surfers New York",
+"logo": "/assets/img/SSNY.jpeg",
+"src": "/games/subway-surfers-ny/index.html"
   }
+  
 ]
