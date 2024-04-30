@@ -63,5 +63,11 @@
 "title": "Core Ball",
 "logo": "/assets/img/CB.jpeg",
 "src": "/games/core-ball/index.html"
-   }
+   },
+
+    {
+"title": "Doge Miner",
+"logo": "/assets/img/DM.png",
+"src": "/games/Doge-Miner/index.html"
+   } 
 ]
