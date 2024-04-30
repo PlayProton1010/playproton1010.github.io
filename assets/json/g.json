@@ -21,6 +21,23 @@
 "title": "2048",
 "logo": "/assets/img/2048.ico",
 "src": "/games/2048/index.html"
+  },
+
+   {
+"title": "Awesome Tanks",
+"logo": "/assets/img/awesome-tanks.jpeg",
+"src": "/games/awesome-tanks/index.html"
+  },
+
+     {
+"title": "Awesome Tanks 2",
+"logo": "/assets/img/awesome-tanks2.jpeg",
+"src": "/games/awesome-tanks2/index.html"
+  },
+
+  {
+"title": "Bitlife",
+"logo": "/assets/img/bitlife.jpeg",
+"src": "/games/Bitlife/index.html"
   }
- 
 ]
