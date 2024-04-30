@@ -51,6 +51,12 @@
 "title": "Subway Surfers New York",
 "logo": "/assets/img/SSNY.jpeg",
 "src": "/games/subway-surfers-ny/index.html"
+  },
+
+  {
+"title": "tanuki sunset",
+"logo": "/assets/img/TS.png",
+"src": "/games/tanuki-sunset/index.html"
   }
   
 ]
