@@ -14,13 +14,13 @@
   {
 "title": "DriveMad",
 "logo": "/assets/img/DriveMad.jpeg",
-"src": "/games/2048/index.html"
+"src": "/games/DriveMad/index.html"
   },
 
  {
 "title": "2048",
 "logo": "/assets/img/2048.ico",
-"src": "/games/DriveMad/index.html"
+"src": "/games/2048/index.html"
   }
  
 ]
