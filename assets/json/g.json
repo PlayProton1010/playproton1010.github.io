@@ -69,5 +69,13 @@
 "title": "Doge Miner",
 "logo": "/assets/img/DM.png",
 "src": "/games/Doge-Miner/index.html"
+   },
+
+  {
+"title": "Tiny Fishing",
+"logo": "/assets/img/TF.png",
+"src": "/games/tiny-fishing/index.html"
    } 
+
+  
 ]
