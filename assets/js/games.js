@@ -34,3 +34,16 @@ fetch('./assets/json/g.json')
 function home() {
   window.location.href = "./index.html"
 }
+
+const searchBox = document.getElementById("search-box");
+  const imagesContainer = document.getElementById("image-container");
+
+  searchBox.addEventListener("keyup", function() {
+    const searchTerm = this.value.toLowerCase();
+    const images = imagesContainer.querySelectorAll("img");
+
+    images.forEach(function(image) {
+      const altText = img.alt.toLowerCase();
+      image.parentElement.style.display = altText.includes(searchTerm) ? "block" : "none";
+    });
+  });
