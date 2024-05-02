@@ -81,7 +81,12 @@
 "title": "Dift Boss",
 "logo": "/assets/img/drift-boss.png",
 "src": "/games/drift-boss/index.html"
-   }
+   },
 
+  {
+"title": "Cookie Clicker",
+"logo": "/assets/img/CC.JPG.png",
+"src": "/games/Cookie-Clicker/index.html"
+   },
   
 ]
