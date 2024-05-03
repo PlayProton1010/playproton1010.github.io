@@ -36,6 +36,6 @@ const searchBox = document.getElementById("search-box");
 
     images.forEach(function(image) {
       const altText = image.alt.toLowerCase();
-      image.parentElement.style.display = altText.includes(searchTerm) ? "block" : "none";
+      image.parentElement.style.visibility = altText.includes(searchTerm) ? "visible" : "hidden";
     });
   });
