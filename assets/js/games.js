@@ -22,6 +22,8 @@ fetch('./assets/json/g.json')
             imageElement.appendChild(img);
             imageContainer.appendChild(imageElement);
         });
+
+        updateGridLayout();
     })
     .catch(error => {
         console.error('Error fetching JSON data:', error);
@@ -39,11 +41,21 @@ searchBox.addEventListener("keyup", function() {
         const parentLink = image.parentElement;
 
         if (altText.includes(searchTerm)) {
-            parentLink.style.visibility = "visible";
-            parentLink.style.position = "static";
+            parentLink.style.display = "block";
         } else {
-            parentLink.style.visibility = "hidden";
-            parentLink.style.position = "absolute";
+            parentLink.style.display = "none";
         }
     });
+
+    updateGridLayout();
 });
+
+function updateGridLayout() {
+    const imageElements = Array.from(document.querySelectorAll("#image-container > a"));
+    const visibleImageElements = imageElements.filter(imageElement => imageElement.style.display !== "none");
+    const containerWidth = imageContainer.clientWidth;
+    const imageWidth = 150;
+    const numColumns = Math.floor(containerWidth / imageWidth);
+
+    imageContainer.style.gridTemplateColumns = `repeat(auto-fill, minmax(${imageWidth}px, 1fr))`;
+}
