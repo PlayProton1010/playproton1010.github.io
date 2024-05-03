@@ -1,4 +1,8 @@
-
+#input {
+color: aliceblue;
+  background-color: #25252a;
+  font-size: 5vh;
+}
 #image-container {
   display: flex;
   flex-wrap: wrap;
