@@ -1,9 +1,13 @@
 #image-container {
-display: flex;
+  display: flex;
   flex-wrap: wrap;
-  width: 80%;
 }
 
+#image-container a {
+  flex: 0 0 auto;
+  margin-right: 25px;
+  margin-bottom: 40px;
+}
 .nav {
   background-color: rgba(128, 128, 128, 0.5);
   display: flex;
