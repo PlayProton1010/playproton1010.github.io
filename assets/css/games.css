@@ -1,7 +1,4 @@
-input {
-width: 100%;
-background-color: grey;
-}
+
 #image-container {
   display: flex;
   flex-wrap: wrap;
