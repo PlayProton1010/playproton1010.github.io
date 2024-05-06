@@ -93,5 +93,11 @@
 "title": "Idle Breakout",
 "logo": "/assets/img/IB.JPG",
 "src": "/games/Idle-Breakout/index.html"
+   },
+
+    {
+"title": "CSGO Clicker",
+"logo": "/assets/img/CSGO.png",
+"src": "/games/CSGO-Clicker/index.html"
    }
 ]
