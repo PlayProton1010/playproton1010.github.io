@@ -16,7 +16,7 @@ fetch('./assets/json/g.json')
 
             imageElement.addEventListener("click", function (event) {
                 event.preventDefault();
-                if (image.alert == null) {
+                if (!image.alert) {
                 window.location.href = image.src;
                      } else {
                     alert(image.alert);
