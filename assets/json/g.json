@@ -99,5 +99,25 @@
 "title": "CSGO Clicker",
 "logo": "/assets/img/CSGO.png",
 "src": "/games/CSGO-Clicker/index.html"
+   },
+
+      {
+"title": "Swoop",
+"logo": "/assets/img/Swoop.jpeg",
+"src": "/games/Swoop/index.html"
+   },
+
+  
+      {
+"title": "Color Switch",
+"logo": "/assets/img/CS.jpeg",
+"src": "/games/Color-Switch/index.html"
+   },
+
+  
+      {
+"title": "Dunes",
+"logo": "/assets/img/Dunes.jpeg",
+"src": "/games/Dunes/index.html"
    }
 ]
