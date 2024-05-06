@@ -1,0 +1,143 @@
+[
+{
+"title": "Yohoho.io", 
+"logo": "/assets/img/yohoho.jpeg",
+"src": "/games/Yohoho/index.html",
+"alert": ""
+},
+
+{
+  "title": "Monkey Mart",
+  "logo": "/assets/img/monkey-mart.png",
+  "src": "/games/Monkey-Mart/monkey-mart/index.html",
+  "alert": ""
+},
+
+  {
+"title": "DriveMad",
+"logo": "/assets/img/DriveMad.jpeg",
+"src": "/games/DriveMad/index.html",
+"alert": ""
+  },
+
+ {
+"title": "2048",
+"logo": "/assets/img/2048.png",
+"src": "/games/2048/index.html",
+"alert": ""
+  },
+
+   {
+"title": "Awesome Tanks",
+"logo": "/assets/img/awesome-tanks.jpeg",
+"src": "/games/awesome-tanks/index.html",
+"alert": ""
+  },
+
+     {
+"title": "Awesome Tanks 2",
+"logo": "/assets/img/awesome-tanks2.jpeg",
+"src": "/games/awesome-tanks2/index.html",
+"alert": ""
+  },
+
+  {
+"title": "Bitlife",
+"logo": "/assets/img/bitlife.png",
+"src": "/games/Bitlife/index.html",
+"alert": ""
+  },
+
+  {
+"title": "Subway Surfers",
+"logo": "/assets/img/splash.jpeg",
+"src": "/games/Subway-Surfers/index.html",
+"alert": ""
+  },
+
+    {
+"title": "Subway Surfers New York",
+"logo": "/assets/img/SSNY.jpeg",
+"src": "/games/subway-surfers-ny/index.html",
+"alert": ""
+  },
+
+  {
+"title": "tanuki sunset",
+"logo": "/assets/img/TS.png",
+"src": "/games/tanuki-sunset/index.html",
+"alert": ""
+  },
+
+   {
+"title": "Core Ball",
+"logo": "/assets/img/CB.jpeg",
+"src": "/games/core-ball/index.html",
+"alert": ""
+   },
+
+    {
+"title": "Doge Miner",
+"logo": "/assets/img/DM.png",
+"src": "/games/Doge-Miner/index.html",
+"alert": ""
+   },
+
+  {
+"title": "Tiny Fishing",
+"logo": "/assets/img/TF.png",
+"src": "/games/tiny-fishing/index.html",
+"alert": ""
+   },
+  
+{
+"title": "Dift Boss",
+"logo": "/assets/img/drift-boss.png",
+"src": "/games/drift-boss/index.html",
+"alert": ""
+   },
+
+  {
+"title": "Cookie Clicker",
+"logo": "/assets/img/CC.JPG",
+"src": "/games/Cookie-Clicker/index.html",
+"alert": ""
+   },
+
+  {
+"title": "Idle Breakout",
+"logo": "/assets/img/IB.JPG",
+"src": "/games/Idle-Breakout/index.html",
+"alert": ""
+   },
+
+    {
+"title": "CSGO Clicker",
+"logo": "/assets/img/CSGO.png",
+"src": "/games/CSGO-Clicker/index.html",
+"alert": "This is currently broken."
+   },
+
+      {
+"title": "Swoop",
+"logo": "/assets/img/Swoop.jpeg",
+"src": "/games/Swoop/index.html",
+"alert": ""
+   },
+
+  
+      {
+"title": "Color Switch",
+"logo": "/assets/img/CS.jpeg",
+"src": "/games/Color-Switch/index.html",
+"alert": ""
+   },
+
+  
+      {
+"title": "Dunes",
+"logo": "/assets/img/Dunes.jpeg",
+"src": "/games/Dunes/index.html",
+"alert": ""
+   }
+]
