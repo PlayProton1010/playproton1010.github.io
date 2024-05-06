@@ -98,7 +98,8 @@
     {
 "title": "CSGO Clicker",
 "logo": "/assets/img/CSGO.png",
-"src": "/games/CSGO-Clicker/index.html"
+"src": "/games/CSGO-Clicker/index.html",
+"alert": "This is currently broken."
    },
 
       {
