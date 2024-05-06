@@ -9,7 +9,7 @@ var username = localStorage.getItem('username');
 if (localStorage.getItem("username") === null) {
 	localStorage.setItem('username' , "Player 1 (You)")
 }
-	if username = Yohoho Sweat {
+	if (username == "Yohoho Sweat"){
 	var money = 100000000000000000000000100000000000000000000000;
 } else {
 	var money = 9999999999999999999999;
