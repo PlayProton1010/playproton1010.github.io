@@ -5,14 +5,14 @@ var itemCounter = 0;
 var fps = 15;
 
 var money = 99999999;
-var username = localStorage.getItem('User');
+var username = localStorage.getItem('Username');
 	
-if (localStorage.getItem("username") === null) {
+if (localStorage.getItem("Username") === null) {
 	localStorage.setItem('username' , "Player 1 (You)")
 }
 
 if (username == "GavinOP") {
-let money = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+let money = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 }
 var useravatar = localStorage.getItem('imgData');
 if (localStorage.getItem("imgData") === null) {
