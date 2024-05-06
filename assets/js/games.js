@@ -16,7 +16,7 @@ fetch('./assets/json/g.json')
 
             imageElement.addEventListener("click", function (event) {
                 event.preventDefault();
-                if (img.say == null {
+                if (img.say == null) {
                 window.location.href = image.src;
                      } else {
                     alert('This game is currently broken, I think a spider did it..')
