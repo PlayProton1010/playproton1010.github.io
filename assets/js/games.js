@@ -19,7 +19,7 @@ fetch('./assets/json/g.json')
                 if (image.alert == null) {
                 window.location.href = image.src;
                      } else {
-                    alert('This game is currently broken, I think a spider did it..');
+                    alert(image.alert);
                 }
             });
 
