@@ -4,14 +4,15 @@
 var itemCounter = 0;
 var fps = 15;
 
-if username = Yohoho Sweat {
-	var money = 100000000000000000000000;
-} else {
-	var money = 0;
-}
+
 var username = localStorage.getItem('username');
 if (localStorage.getItem("username") === null) {
 	localStorage.setItem('username' , "Player 1 (You)")
+}
+	if username = Yohoho Sweat {
+	var money = 100000000000000000000000100000000000000000000000;
+} else {
+	var money = 9999999999999999999999;
 }
 var useravatar = localStorage.getItem('imgData');
 if (localStorage.getItem("imgData") === null) {
