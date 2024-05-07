@@ -7,6 +7,9 @@ fetch('./assets/json/g.json')
             const imageElement = document.createElement('a');
             imageElement.href = image.src;
 
+            const imgContainer = document.createElement('div');
+            imgContainer.className = "image-container";
+
             const img = document.createElement('img');
             img.src = image.logo;
             img.alt = image.title || 'ERROR';
@@ -14,16 +17,21 @@ fetch('./assets/json/g.json')
             img.style.height = "150px";
             img.className = "classy";
 
+            const altText = document.createElement('div');
+            altText.textContent = img.alt;
+
             imageElement.addEventListener("click", function (event) {
                 event.preventDefault();
                 if (!image.alert) {
-                window.location.href = image.src;
-                     } else {
+                    window.location.href = image.src;
+                } else {
                     alert(image.alert);
                 }
             });
 
-            imageElement.appendChild(img);
+            imgContainer.appendChild(img);
+            imgContainer.appendChild(altText);
+            imageElement.appendChild(imgContainer);
             imageContainer.appendChild(imageElement);
         });
 
@@ -42,7 +50,7 @@ searchBox.addEventListener("keyup", function() {
 
     images.forEach(function(image) {
         const altText = image.alt.toLowerCase();
-        const parentLink = image.parentElement;
+        const parentLink = image.parentElement.parentElement;
 
         if (altText.includes(searchTerm)) {
             parentLink.style.display = "block";
