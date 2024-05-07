@@ -71,3 +71,4 @@ function updateGridLayout() {
 
     imageContainer.style.gridTemplateColumns = `repeat(auto-fill, minmax(${imageWidth}px, 1fr))`;
 }
+
