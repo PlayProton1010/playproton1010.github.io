@@ -11,7 +11,7 @@ if (localStorage.getItem("Username") === null) {
 	localStorage.setItem('Username' , "Player 1 (You)")
 }
 
-if (username == "Player1 (You)") {
+if (username == "GavinIsGreat") {
 let money = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 }
 var useravatar = localStorage.getItem('imgData');
