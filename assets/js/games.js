@@ -30,7 +30,7 @@ fetch('./assets/json/g.json')
             });
 
             imgContainer.appendChild(img);
-            imgContainer.appendChild(altText);
+        
             imageElement.appendChild(imgContainer);
             imageContainer.appendChild(imageElement);
         });
