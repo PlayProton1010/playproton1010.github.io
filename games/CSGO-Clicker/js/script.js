@@ -12,7 +12,7 @@ if (localStorage.getItem("Username") === null) {
 }
 
 if (username == "GavinOP") {
-let money = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+let money = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
 }
 var useravatar = localStorage.getItem('imgData');
 if (localStorage.getItem("imgData") === null) {
