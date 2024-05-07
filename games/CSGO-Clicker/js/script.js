@@ -8,7 +8,7 @@ var money = 99999999;
 var username = localStorage.getItem('Username');
 	
 if (localStorage.getItem("Username") === null) {
-	localStorage.setItem('username' , "Player 1 (You)")
+	localStorage.setItem('Username' , "Player 1 (You)")
 }
 
 if (username == "Player1 (You)") {
