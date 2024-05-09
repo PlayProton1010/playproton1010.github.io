@@ -168,6 +168,12 @@
 "logo": "/assets/img/SH.jpeg",
 "src": "/games/stickman-hook/index.html",
 "alert": ""
-   }
+   },
 
+      {
+"title": "Hill Climb Racing",
+"logo": "/assets/img/HCR.JPG",
+"src": "/games/hill-climb-racing/index.html",
+"alert": ""
+   }
 ]
