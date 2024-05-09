@@ -182,7 +182,13 @@
 "logo": "/assets/img/Wordle.png",
 "src": "/games/wordle/index.html",
 "alert": ""
-   }
+   },
 
-  
+
+     {
+"title": "Ballistic Chicken",
+"logo": "/assets/img/BC.jpeg",
+"src": "/games/ballistic-chickens/index.html",
+"alert": ""
+   }
 ]
