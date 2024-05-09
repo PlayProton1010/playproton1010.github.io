@@ -149,5 +149,11 @@
 "alert": ""
    }
 
-  
+      {
+"title": "OvO",
+"logo": "/games/edge-surf/splash.png",
+"src": "/games/edge-surf/index.html",
+"alert": ""
+   }
+
 ]
