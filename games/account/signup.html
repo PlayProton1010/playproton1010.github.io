@@ -1,1 +1,81 @@
 
+  <script>
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"; 
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
+    
+  const firebaseConfig = {
+    apiKey: "AIzaSyAM4SyWnRmHNQgeaLPStwESVqhHiKy-Q2s",
+    authDomain: "maximal-park-420917.firebaseapp.com",
+    projectId: "maximal-park-420917",
+    storageBucket: "maximal-park-420917.appspot.com",
+    messagingSenderId: "539718084378",
+    appId: "1:539718084378:web:4b2ee83c0b6d312cc42ea3",
+    measurementId: "G-5D19CXJYBB"
+  };
+
+    firebase.initializeApp(firebaseConfig);
+   const analytics = getAnalytics(app);
+    
+    function saveLoginSession(uid) {
+      localStorage.setItem('login_user_uid', uid);
+    }
+
+    
+    function loadLoginSession() {
+      const uid = localStorage.getItem('login_user_uid');
+      if (!uid) {
+        saveLoginSession('');
+      }
+    
+      return uid;
+    }
+
+    function signup() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      if (!email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
+        alert("Invalid email address");
+        return;
+      }
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long");
+        return;
+      }
+
+      // Create the user
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(function(user) {
+          alert("Successfully Logged in!")
+
+          saveLoginSession(user.user.uid);
+
+          const userRef = firebase.database().ref('users/' + user.user.uid);
+          userRef.set({
+            email: email,
+          });
+
+    
+
+        })
+        .catch(function(error) {
+ 
+          alert(error.message);
+        });
+    }
+
+
+    if (!loadLoginSession()) {
+      saveLoginSession('');
+    }
+
+
+    const uid = loadLoginSession();
+    if (uid) {
+      // The user is logged in.
+      // Use the `uid` variable in your code.
+    } else {
+      // The user is not logged in.
+      // Display an error message or redirect the user to the login page.
+    }
+</script>
