@@ -1,4 +1,15 @@
-
+ <div id="app">
+    <h1 style= "text-align: center; font-family: impact; color: white;">Proton SignUp</h1>
+    <input style=" display: block; margin-left: auto; margin-right: auto;" type="email" id="email" placeholder="Email">
+    <br>
+    <input style=" display: block; margin-left: auto; margin-right: auto;" type="password" id="password" placeholder="Password">
+    <br>
+    <button style="background-color: #007bff; color: white; border-radius: 5px; padding: 10px 20px; display: block; margin-left: auto; margin-right: auto;" type="button" id="signup" onclick="signup()">Sign Up</button>
+    <br>
+    <br>
+    <br>
+    <a style= "text-align: center; color: white; font-family: impact; display: block; margin-left: auto; margin-right: auto;" hr<button class="btn btn-primary" onclick="window.location.href='https://gshaffer312.github.io/AuroraGames/LS/login.html'">Have a account? Login!</button>
+  </div>
   <script>
    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"; 
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
@@ -79,3 +90,10 @@
       // Display an error message or redirect the user to the login page.
     }
 </script>
+
+<style>
+  input type="text" {
+  width: 300px;
+  height: 175px;
+}
+</style>
