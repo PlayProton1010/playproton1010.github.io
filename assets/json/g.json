@@ -147,13 +147,19 @@
 "logo": "/assets/img/OvO.PNG",
 "src": "/games/OvO/index.html",
 "alert": ""
-   }
+   },
 
       {
 "title": "Edge Surf",
 "logo": "/assets/img/ES.JPG",
 "src": "/games/edge-surf/index.html",
 "alert": ""
-   }
+   },
 
+      {
+"title": "Champion Island",
+"logo": "/assets/img/CI.PNG",
+"src": "/games/champion-island/index.html",
+"alert": ""
+   }
 ]
