@@ -175,5 +175,14 @@
 "logo": "/assets/img/DTH.jpeg",
 "src": "/games/draw-the-hill/index.html",
 "alert": ""
+   },
+
+     {
+"title": "Wordle",
+"logo": "/assets/img/Wordle.png",
+"src": "/games/wordle/index.html",
+"alert": ""
    }
+
+  
 ]
