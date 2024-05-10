@@ -1,5 +1,5 @@
 const STUFF = getData('save', {
-  money: 0,
+  money: 100000000000,
   upgrades: [0,0,0,0,0,0],
   achievements: [],
 });
