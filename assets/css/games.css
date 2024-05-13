@@ -1,7 +1,5 @@
 #input {
-color: aliceblue;
-  background-color: #25252a;
-  font-size: 5vh;
+border-radius: 20;
 }
 #image-container {
   display: flex;
