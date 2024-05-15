@@ -24,4 +24,6 @@ var url = "https://useproton.github.io/play.html";
   iframe.allow = "fullscreen";
   iframe.src = url;
   win.document.body.appendChild(iframe);
+  location.replace = "https://google.com"
+}
   
