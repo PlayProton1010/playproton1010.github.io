@@ -24,5 +24,5 @@ var url = "https://useproton.github.io/play.html";
   iframe.allow = "fullscreen";
   iframe.src = url;
   win.document.body.appendChild(iframe);
-  let e = localStorage.getItem("RL") || "https://www.google.com"
-window.location.href = e
+  let e = localStorage.getItem("RL") || "https://www.google.com";
+location.replace = e;
