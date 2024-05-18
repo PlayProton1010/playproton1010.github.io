@@ -36,7 +36,7 @@ fetch('./assets/json/g.json')
                     } else {
                         let url = image.link;
                         localStorage.setItem("Iframe", __uv$config.prefix + __uv$config.encodeUrl(url));
-                      window.location.href = image.link;
+                      window.location.href = "go.html";
                     }
                 } else {
                     alert(image.alert);
