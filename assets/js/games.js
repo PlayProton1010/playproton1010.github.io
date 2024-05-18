@@ -31,7 +31,16 @@ fetch('./assets/json/g.json')
             imageElement.addEventListener("click", function (event) {
                 event.preventDefault();
                 if (!image.alert) {
-                    window.location.href = image.src;
+                  if (!image.url) {
+                    let url = image.link;
+          localStorage.setItem(
+            "Iframe",
+            __uv$config.prefix + __uv$config.encodeUrl(url),
+          );
+          window.location.href = "./go.html";
+                  } else {
+               window.location.href = image.src
+                  }
                 } else {
                     alert(image.alert);
                 }
