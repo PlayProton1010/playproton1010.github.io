@@ -1,3 +1,11 @@
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./e/sw.js", {
+      scope: __uv$config.prefix,
+    });
+  });
+}
+
 const imageContainer = document.getElementById('image-container');
 
 fetch('./assets/json/g.json')
