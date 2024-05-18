@@ -190,5 +190,12 @@
 "logo": "/assets/img/BC.jpeg",
 "src": "/games/ballistic-chickens/index.html",
 "alert": ""
+   },
+  
+     {
+"title": "Motox3m",
+"logo": "/assets/img/x3m.jpeg",
+"link": "https://www.coolmathgames.com/0-moto-x3m/play",
+"alert": ""
    }
 ]
