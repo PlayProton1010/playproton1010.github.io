@@ -31,17 +31,14 @@ fetch('./assets/json/g.json')
             imageElement.addEventListener("click", function (event) {
                 event.preventDefault();
                 if (!image.alert) {
-                  if (!image.url) {
-                    let url = image.link;
+                  if (!image.link) {
+                    window.location.href = image.src
+                  } else {
+               let url = image.link;
           localStorage.setItem(
             "Iframe",
             __uv$config.prefix + __uv$config.encodeUrl(url),
-          );
-          window.location.href = "./go.html";
-                  } else {
-               window.location.href = image.src
-                  }
-                } else {
+            }  else {
                     alert(image.alert);
                 }
             });
