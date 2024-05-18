@@ -1,9 +1,9 @@
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./e/sw.js", {
-      scope: __uv$config.prefix,
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./e/sw.js", {
+            scope: __uv$config.prefix,
+        });
     });
-  });
 }
 
 const imageContainer = document.getElementById('image-container');
@@ -31,20 +31,19 @@ fetch('./assets/json/g.json')
             imageElement.addEventListener("click", function (event) {
                 event.preventDefault();
                 if (!image.alert) {
-                  if (!image.link) {
-                    window.location.href = image.src
-                  } else {
-               let url = image.link;
-          localStorage.setItem(
-            "Iframe",
-            __uv$config.prefix + __uv$config.encodeUrl(url),
-            }  else {
+                    if (!image.link) {
+                        window.location.href = image.src;
+                    } else {
+                        let url = image.link;
+                        localStorage.setItem("Iframe", __uv$config.prefix + __uv$config.encodeUrl(url));
+                      window.location.href = image.link;
+                    }
+                } else {
                     alert(image.alert);
                 }
             });
 
             imgContainer.appendChild(img);
-        
             imageElement.appendChild(imgContainer);
             imageContainer.appendChild(imageElement);
         });
@@ -85,4 +84,3 @@ function updateGridLayout() {
 
     imageContainer.style.gridTemplateColumns = `repeat(auto-fill, minmax(${imageWidth}px, 1fr))`;
 }
-
