@@ -8,6 +8,8 @@ border-radius: 20;
     background-color: #25252a;
     font-size: 5vh;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 #image-container {
   display: flex;
