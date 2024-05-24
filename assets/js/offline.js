@@ -3,7 +3,7 @@ const urlsToCache = [
   '/',
   './assets/js/index.css',
   './assets/js/index.js'
-  // Add more URLs of resources you want to cache initially
+  
 ];
 
 self.addEventListener('install', event => {
@@ -26,9 +26,9 @@ self.addEventListener('fetch', event => {
       caches.match(event.request)
         .then(response => {
           if (response) {
-            return response; // Return the cached resource
+            return response;
           }
-          // Fetch the resource and cache it
+      
           return fetch(event.request).then(networkResponse => {
             return caches.open(CACHE_NAME).then(cache => {
               cache.put(event.request, networkResponse.clone());
@@ -38,7 +38,7 @@ self.addEventListener('fetch', event => {
         })
     );
   } else {
-    // Handle other requests
+    
     event.respondWith(
       caches.match(event.request)
         .then(response => {
@@ -55,7 +55,7 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName); // Delete old caches
+            return caches.delete(cacheName); 
           }
         })
       );
