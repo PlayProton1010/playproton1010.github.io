@@ -1,9 +1,8 @@
-const CACHE_NAME = 'my-site-cache-v1';
+const CACHE_NAME = 'proton-V1';
 const urlsToCache = [
   '/',
-  './assets/js/index.css',
-  './assets/js/index.js'
-  
+  '/assets/css/index.css',
+  '/assets/js/index.js'
 ];
 
 self.addEventListener('install', event => {
@@ -17,18 +16,20 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Handle requests for the assets/img folder
-  if (event.request.url.includes('./assets/img/') || 
-      event.request.url.includes('./assets/js/') || 
-      event.request.url.includes('./assets/css/') || 
-      event.request.url.includes('./games/')) {
+  const requestUrl = new URL(event.request.url);
+
+  if (requestUrl.origin === location.origin && (
+      requestUrl.pathname.startsWith('/assets/img/') || 
+      requestUrl.pathname.startsWith('/assets/js/') || 
+      requestUrl.pathname.startsWith('/assets/css/') || 
+      requestUrl.pathname.startsWith('/games/')
+    )) {
     event.respondWith(
       caches.match(event.request)
         .then(response => {
           if (response) {
             return response;
           }
-      
           return fetch(event.request).then(networkResponse => {
             return caches.open(CACHE_NAME).then(cache => {
               cache.put(event.request, networkResponse.clone());
@@ -38,7 +39,6 @@ self.addEventListener('fetch', event => {
         })
     );
   } else {
-    
     event.respondWith(
       caches.match(event.request)
         .then(response => {
@@ -54,8 +54,8 @@ self.addEventListener('activate', event => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName); 
+          if (!cacheWhitelist.includes(cacheName)) {
+            return caches.delete(cacheName);
           }
         })
       );
