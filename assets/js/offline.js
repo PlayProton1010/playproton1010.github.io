@@ -1,8 +1,9 @@
-const CACHE_NAME = 'proton-V1';
+const CACHE_NAME = 'proton-v1';
 const urlsToCache = [
   '/',
   '/assets/css/index.css',
   '/assets/js/index.js'
+  // Add more URLs of resources you want to cache initially
 ];
 
 self.addEventListener('install', event => {
@@ -18,6 +19,7 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', event => {
   const requestUrl = new URL(event.request.url);
 
+  // Check if the request is for any resources under /assets/img/, /assets/js/, /assets/css/, or /games/
   if (requestUrl.origin === location.origin && (
       requestUrl.pathname.startsWith('/assets/img/') || 
       requestUrl.pathname.startsWith('/assets/js/') || 
@@ -28,7 +30,7 @@ self.addEventListener('fetch', event => {
       caches.match(event.request)
         .then(response => {
           if (response) {
-            return response;
+            return response; // Return the cached resource
           }
           return fetch(event.request).then(networkResponse => {
             return caches.open(CACHE_NAME).then(cache => {
