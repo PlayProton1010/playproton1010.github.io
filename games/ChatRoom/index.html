@@ -11,6 +11,6 @@
   const embed = document.getElementById('embed')
   embed.emit()
   embed.on('message', ({ message, channel }) => {
-  console.log(`New message in #${channel.name}`, message)
+  alert(`New message in #${channel.name}`, message)
 })
 </script>
