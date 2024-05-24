@@ -3,6 +3,8 @@ const urlsToCache = [
   '/',
   './assets/css/index.css',
   './assets/js/index.js',
+  './index.html',
+  './play.html'
   // Add other initial URLs to cache here if needed
 ];
 
