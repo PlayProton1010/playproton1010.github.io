@@ -8,7 +8,7 @@ background-image: url("/assets/img/Designer.png");
 
   
   #color-changing-text {
-  color: white; 
+  color: red; 
   transition: color 1s ease-in-out;
   font-size: 80px;
 
@@ -17,6 +17,7 @@ background-image: url("/assets/img/Designer.png");
 p {
   font-size: 80px;
 text-align: center;
+     color: white;
   
 }
 .button {
