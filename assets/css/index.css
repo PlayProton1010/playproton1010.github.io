@@ -8,7 +8,7 @@ background-image: url("/assets/img/IMG_0081.jpeg");
 
   
   #color-changing-text {
-  color: red; 
+  color: Blue; 
   transition: color 1s ease-in-out;
   font-size: 80px;
 
