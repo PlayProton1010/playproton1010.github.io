@@ -5,7 +5,17 @@ if ("serviceWorker" in navigator) {
         });
     });
 }
-
+  if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./assets/js/offline.js')
+          .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
 const imageContainer = document.getElementById('image-container');
 
 fetch('./assets/json/g.json')
