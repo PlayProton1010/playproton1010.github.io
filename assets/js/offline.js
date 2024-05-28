@@ -6,7 +6,7 @@ const urlsToCache = [
   './index.html',
   './play.html',
   './annoucements.html',
-  './games/'
+  './assets/json/g.json'
 ];
 
 self.addEventListener('install', event => {
