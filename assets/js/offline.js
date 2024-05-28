@@ -5,7 +5,7 @@ const urlsToCache = [
   './assets/js/index.js',
   './index.html',
   './play.html',
-  './annoucements.html',
+  './news.html',
   './assets/json/g.json'
 ];
 
