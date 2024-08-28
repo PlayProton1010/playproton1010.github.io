@@ -1,4 +1,7 @@
-
+.mag {
+height: 10px;
+ width: 25px;
+}
 
 body {
 background-image: url("/assets/img/IMG_0081.jpeg");
