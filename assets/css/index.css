@@ -1,6 +1,8 @@
 .mag {
-height: 10px;
- width: 25px;
+height: 25px;
+ width: 14px;
+   display: flex;
+  align-items: center;
 }
 
 body {
