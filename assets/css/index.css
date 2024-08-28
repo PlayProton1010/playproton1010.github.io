@@ -1,9 +1,12 @@
+
 .mag {
-height: 25px;
- width: 14px;
-   display: flex;
-  align-items: center;
+  height: 25px;
+  width: 14px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
+
 
 body {
 background-image: url("/assets/img/IMG_0081.jpeg");
