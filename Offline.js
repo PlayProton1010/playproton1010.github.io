@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Proton-V1.1';
+const CACHE_NAME = 'Proton-V1.2';
 const urlsToCache = [
   '/',
   './assets/css/index.css',
