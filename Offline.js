@@ -9,6 +9,7 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
@@ -20,7 +21,6 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
   const requestUrl = new URL(event.request.url);
-
 
   if (requestUrl.origin === location.origin && (
       requestUrl.pathname.startsWith('/assets/img/') || 
@@ -63,6 +63,6 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) 
   );
 });
