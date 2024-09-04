@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Proton';
+const CACHE_NAME = 'Proton-V2';
 const urlsToCache = [
   '/',
   './assets/css/index.css',
@@ -22,43 +22,47 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', event => {
   const requestUrl = new URL(event.request.url);
 
-  event.respondWith(
-    caches.match(event.request)
-      .then(cachedResponse => {
-        if (cachedResponse) {
-          
-          return fetch(event.request)
-            .then(networkResponse => {
-              if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-                return cachedResponse;
-              }
-
-       
-              caches.open(CACHE_NAME).then(cache => {
-                cache.put(event.request, networkResponse.clone());
-              });
-
-              return networkResponse;
-            })
-            .catch(() => cachedResponse);
-        } else {
-          return fetch(event.request)
-            .then(networkResponse => {
-              if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-                return networkResponse;
-              }
-
-              caches.open(CACHE_NAME).then(cache => {
-                cache.put(event.request, networkResponse.clone());
-              });
-
+  if (requestUrl.origin === location.origin && (
+      requestUrl.pathname.startsWith('/assets/img/') || 
+      requestUrl.pathname.startsWith('/assets/js/') || 
+      requestUrl.pathname.startsWith('/assets/css/') || 
+      requestUrl.pathname.startsWith('/games/')
+    )) {
+    event.respondWith(
+      caches.match(event.request)
+        .then(response => {
+          if (response) {
+            return response; 
+          }
+          return fetch(event.request).then(networkResponse => {
+            return caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, networkResponse.clone());
               return networkResponse;
             });
-        }
-      })
-  );
+          });
+        })
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request)
+        .then(response => {
+          return response || fetch(event.request);
+        })
+    );
+  }
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(self.clients.claim()); 
+  const cacheWhitelist = [CACHE_NAME];
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (!cacheWhitelist.includes(cacheName)) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    }).then(() => self.clients.claim()) 
+  );
 });
