@@ -253,7 +253,14 @@
 "logo": "/assets/img/pi2.jpeg",
 "link": "https://www.paper-io.com",
 "alert": ""
-   }
+   },
+
+{
+  "title": "geometry dash",
+  "logo": "./assets/img/IMG_2436.jpeg",
+  "src": "",
+  "alert": "/games/geodash/geodash/index.html"
+}
   
   
 ]
