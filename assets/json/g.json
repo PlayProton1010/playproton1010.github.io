@@ -260,6 +260,16 @@
   "logo": "./assets/img/IMG_2436.jpeg",
   "src": "/games/geodash/geodash/index.html",
   "alert": ""
-}
+},
+
+  {
+  "title": "pixel gun survival",
+  "logo": "./assets/img/IMG_2438.jpeg",
+  "src": "/games/pixel-gun-survival/pixel-gun-survival",
+  "alert": ""
+},
+
+
+
   
 ]
