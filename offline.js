@@ -32,9 +32,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request)
         .then(response => {
-          // Serve from cache if found, otherwise fetch from network
           return response || fetch(event.request).then(networkResponse => {
-            // Cache the new response for future use
             return caches.open(CACHE_NAME).then(cache => {
               cache.put(event.request, networkResponse.clone());
               return networkResponse;
@@ -46,7 +44,6 @@ self.addEventListener('fetch', event => {
         })
     );
   } else {
-    // For other requests, use cache falling back to network
     event.respondWith(
       caches.match(event.request)
         .then(response => response || fetch(event.request))
@@ -54,7 +51,6 @@ self.addEventListener('fetch', event => {
   }
 });
 
-// Activate event - clearing old caches
 self.addEventListener('activate', event => {
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
