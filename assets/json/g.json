@@ -258,16 +258,16 @@
 {
   "title": "geometry dash",
   "logo": "./assets/img/IMG_2436.jpeg",
-  "src": "",
-  "alert": "/games/geodash/geodash/index.html"
+  "src": "/games/geodash/geodash/index.html",
+  "alert": ""
 },
   
 
 {
   "title": "geometry dash lite",
   "logo": "./assets/img/IMG_2437.jpeg",
-  "src": "",
-  "alert": "/games/geodashlite/index.html"
+  "src": "/games/geodashlite/index.html",
+  "alert": ""
 }
   
   
