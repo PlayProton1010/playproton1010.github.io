@@ -260,7 +260,16 @@
   "logo": "./assets/img/IMG_2436.jpeg",
   "src": "",
   "alert": "/games/geodash/geodash/index.html"
+},
+  
+
+{
+  "title": "geometry dash lite",
+  "logo": "./assets/img/IMG_2436.jpeg",
+  "src": "",
+  "alert": "/games/geodashlite/index.html"
 }
+  
   
   
 ]
