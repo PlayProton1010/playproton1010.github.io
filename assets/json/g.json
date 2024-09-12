@@ -267,7 +267,14 @@
   "logo": "./assets/img/IMG_2438.jpeg",
   "src": "/games/pixel-gun-survival/pixel-gun-survival",
   "alert": ""
+},
+    {
+  "title": "idle shark",
+  "logo": "./assets/img/IMG_2449.jpeg",
+  "src": "/games/idle-shark/idle-shark",
+  "alert": ""
 }
+
 
 
 
