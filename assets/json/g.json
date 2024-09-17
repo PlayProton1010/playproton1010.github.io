@@ -287,8 +287,15 @@
   "logo": "./assets/img/IMG_2459.jpeg",
   "src": "./games/BlockBlast/index.html",
   "alert": ""
+},
+  
+
+    {
+  "title": "Block Blast",
+  "logo": "./games/angry-sharks/assets/favicon/icon-512x512.png",
+  "src": "./games/angry-sharks/index.html",
+  "alert": ""
 }
-
-
+  
   
 ]
