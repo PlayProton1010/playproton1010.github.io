@@ -295,7 +295,14 @@
   "logo": "./games/angry-sharks/assets/favicon/icon-512x512.png",
   "src": "./games/angry-sharks/index.html",
   "alert": ""
+},
+   {
+  "title": "Basketball random",
+  "logo": "./games/basket-random/",
+  "src": "./games/basket-random/index.html",
+  "alert": ""
 }
+  
   
   
 ]
