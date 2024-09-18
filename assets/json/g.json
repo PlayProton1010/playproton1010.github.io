@@ -298,7 +298,7 @@
 },
    {
   "title": "Basketball random",
-  "logo": "./games/basket-random/basketballsplash.jpeg",
+  "logo": "./games/basket-random/splash.jpeg",
   "src": "./games/basket-random/index.html",
   "alert": ""
 }
