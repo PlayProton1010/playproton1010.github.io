@@ -301,7 +301,14 @@
   "logo": "./games/basket-random/splash.jpeg",
   "src": "./games/basket-random/index.html",
   "alert": ""
+},
+     {
+  "title": "Flappy 2048",
+  "logo": "./games/flappy-2048/favicon.ico",
+  "src": "./games/flappy-2048/index.html",
+  "alert": ""
 }
+  
   
   
   
