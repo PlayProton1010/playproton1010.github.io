@@ -303,6 +303,13 @@
   "alert": ""
 },
      {
+  "title": "basketball cannon",
+  "logo": "./games/cannon-basketball-4/img/splash.png",
+  "src": "./games/cannon-basketball-4/index.html",
+  "alert": ""
+},
+  
+     {
   "title": "Flappy 2048",
   "logo": "./games/flappy-2048/favicon.ico",
   "src": "./games/flappy-2048/index.html",
