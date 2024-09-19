@@ -311,7 +311,7 @@
   
      {
   "title": "Flappy 2048",
-  "logo": "./games/flappy-2048/favicon.ico",
+  "logo": "./assets/img/IMG_2476.jpeg",
   "src": "./games/flappy-2048/index.html",
   "alert": ""
 }
