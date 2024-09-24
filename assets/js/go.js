@@ -6,3 +6,11 @@ window.onload = function () {
   document.body.appendChild(iframe);
   document.body.style.overflow = "hidden";
 };
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./e/sw.js", {
+            scope: __uv$config.prefix,
+        });
+    });
+}
+  
