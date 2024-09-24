@@ -1,7 +1,7 @@
 
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/assets/sw.js", { scope: __uv$config.prefix });
+        navigator.serviceWorker.register("./sw.js", { scope: __uv$config.prefix });
     });
 }
 
