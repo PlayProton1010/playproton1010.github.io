@@ -1,12 +1,11 @@
 
-.parent-container {
+.input-game {
   display: flex;
   align-items: center; 
   justify-content: center; 
   height: 100vh; 
 }
 
-/* Input styling */
 .input {
   border-radius: 20px;  
   width: 80vw;        
