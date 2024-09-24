@@ -1,6 +1,6 @@
-importScripts("/u/uv.bundle.js");
-importScripts("/u/uv.config.js");
-importScripts(__uv$config.sw || "/u/uv.sw.js");
+importScripts("/e/uv.bundle.js");
+importScripts("/e/uv.config.js");
+importScripts(__uv$config.sw || "/e/uv.sw.js");
 
 const uv = new UVServiceWorker();
 const userKey = new URL(location).searchParams.get("userkey");
