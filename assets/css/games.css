@@ -9,13 +9,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 10vh;
 }
 
 .input {
   border-radius: 20px;
   width: 80vw;
-  height: auto;
+  height: 10vh;
   border: 0;
   outline: 0;
   color: aliceblue;
