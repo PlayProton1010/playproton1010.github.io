@@ -15,7 +15,7 @@ body {
 .input {
   border-radius: 20px;
   width: 80vw;
-  height: 10vh;
+  height: auto;
   border: 0;
   outline: 0;
   color: aliceblue;
