@@ -1,3 +1,21 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url("/assets/img/Designer.png");
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 37, 42, 0.7);
+  z-index: -1;
+}
+
 .input-game {
   display: flex;
   align-items: center;
@@ -15,8 +33,8 @@
   background-color: #25252a;
   font-size: 5vh;
   text-align: center;
+  padding: 10px;
 }
-
 
 #image-container {
   display: flex;
@@ -25,10 +43,10 @@
 
 #image-container a {
   flex: 0 0 auto;
-    margin-right: 25px;
+  margin-right: 25px;
   margin-bottom: 40px;
-  
 }
+
 .nav {
   background-color: rgba(128, 128, 128, 0.5);
   display: flex;
@@ -40,6 +58,7 @@
   margin-left: 0;
   flex-wrap: wrap;
   align-items: center; 
+  padding: 10px;
 }
 
 .nav ul {
@@ -63,14 +82,22 @@
   background-color: rgba(255, 255, 255, 0.2);
   transition: background-color 0.3s ease;
 }
-  .classy {
-    border-radius: 20px;
-  }
 
- p {
+.classy {
+  border-radius: 20px;
+}
+
+p {
   margin-top: 10px;
   text-align: center;
- }
-    body {
-    background-image: url("/assets/img/Designer.png");
+}
+
+@media (max-width: 768px) {
+  .input {
+    font-size: 4vh;
   }
+
+  .nav a {
+    padding: 8px 12px;
+  }
+}
