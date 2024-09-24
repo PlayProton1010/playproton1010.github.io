@@ -1,11 +1,9 @@
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./e/sw.js", {
-            scope: __uv$config.prefix,
-        });
+        navigator.serviceWorker.register("./e/sw.js", { scope: __uv$config.prefix });
     });
 }
-  
+
 const imageContainer = document.getElementById('image-container');
 
 fetch('./assets/json/g.json')
@@ -25,19 +23,12 @@ fetch('./assets/json/g.json')
             img.style.height = "150px";
             img.className = "classy";
 
-            const altText = document.createElement('div');
-            altText.textContent = img.alt;
-
-            imageElement.addEventListener("click", function (event) {
+            imageElement.addEventListener("click", (event) => {
                 event.preventDefault();
                 if (!image.alert) {
-                    if (!image.link) {
-                        window.location.href = image.src;
-                    } else {
-                        let url = image.link;
-                        localStorage.setItem("Iframe", __uv$config.prefix + __uv$config.encodeUrl(url));
-                      window.location.href = "go.html";
-                    }
+                    const url = image.link || image.src;
+                    localStorage.setItem("Iframe", __uv$config.prefix + __uv$config.encodeUrl(url));
+                    window.location.href = image.link ? "go.html" : url;
                 } else {
                     alert(image.alert);
                 }
@@ -50,37 +41,24 @@ fetch('./assets/json/g.json')
 
         updateGridLayout();
     })
-    .catch(error => {
-        console.error('Error fetching JSON data:', error);
-    });
+    .catch(error => console.error('Error fetching JSON data:', error));
 
 const searchBox = document.getElementById("search-box");
-const imagesContainer = document.getElementById("image-container");
 
 searchBox.addEventListener("keyup", function() {
     const searchTerm = this.value.toLowerCase();
-    const images = imagesContainer.querySelectorAll("img");
+    const images = imageContainer.querySelectorAll("img");
 
-    images.forEach(function(image) {
-        const altText = image.alt.toLowerCase();
+    images.forEach(image => {
         const parentLink = image.parentElement.parentElement;
-
-        if (altText.includes(searchTerm)) {
-            parentLink.style.display = "block";
-        } else {
-            parentLink.style.display = "none";
-        }
+        parentLink.style.display = image.alt.toLowerCase().includes(searchTerm) ? "block" : "none";
     });
 
     updateGridLayout();
 });
 
 function updateGridLayout() {
-    const imageElements = Array.from(document.querySelectorAll("#image-container > a"));
-    const visibleImageElements = imageElements.filter(imageElement => imageElement.style.display !== "none");
     const containerWidth = imageContainer.clientWidth;
     const imageWidth = 150;
-    const numColumns = Math.floor(containerWidth / imageWidth);
-
     imageContainer.style.gridTemplateColumns = `repeat(auto-fill, minmax(${imageWidth}px, 1fr))`;
 }
