@@ -1,15 +1,14 @@
-
 .input-game {
   display: flex;
-  align-items: center; 
-  justify-content: center; 
-  height: 100vh; 
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .input {
-  border-radius: 20px;  
-  width: 80vw;        
-  height: 10vh;        
+  border-radius: 20px;
+  width: 80vw;
+  height: 10vh;
   border: 0;
   outline: 0;
   color: aliceblue;
@@ -17,6 +16,7 @@
   font-size: 5vh;
   text-align: center;
 }
+
 
 #image-container {
   display: flex;
