@@ -251,7 +251,7 @@
      {
 "title": "Paper Io 2",
 "logo": "/assets/img/pi2.jpeg",
-"link": "https://www.paper-io.com",
+"src": "./games/paperio2",
 "alert": ""
    },
 
