@@ -314,9 +314,15 @@
   "logo": "./assets/img/IMG_2476.jpeg",
   "src": "./games/flappy-2048/index.html",
   "alert": ""
-}
+},
+
   
-  
+  {
+  "title": "Snowbattle",
+  "logo": "./assets/img/IMG_2509.jpeg",
+  "src": "./games/snowbattle/index.html",
+  "alert": ""
+},
   
   
 ]
