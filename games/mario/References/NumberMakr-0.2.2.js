@@ -70,275 +70,311 @@
 */
 var NumberMakr;
 (function (NumberMakr_1) {
-    "use strict";
+  "use strict";
+  /**
+   * A typed MersenneTwister, which is a state-based random number generator.
+   * Options exist for changing or randomizing state and producing random
+   * booleans, integers, and real numbers.
+   */
+  var NumberMakr = (function () {
     /**
-     * A typed MersenneTwister, which is a state-based random number generator.
-     * Options exist for changing or randomizing state and producing random
-     * booleans, integers, and real numbers.
+     * Initializes a new instance of the NumberMakr class.
+     *
+     * @param settings   Settings to be used for initialization.
      */
-    var NumberMakr = (function () {
-        /**
-         * Initializes a new instance of the NumberMakr class.
-         *
-         * @param settings   Settings to be used for initialization.
-         */
-        function NumberMakr(settings) {
-            if (settings === void 0) { settings = {}; }
-            this.stateLength = settings.stateLength || 624;
-            this.statePeriod = settings.statePeriod || 397;
-            this.matrixA = settings.matrixA || 0x9908b0df;
-            this.maskUpper = settings.maskUpper || 0x80000000;
-            this.maskLower = settings.maskLower || 0x7fffffff;
-            this.stateVector = new Array(this.stateLength);
-            this.stateIndex = this.stateLength + 1;
-            this.matrixAMagic = new Array(0x0, this.matrixA);
-            this.resetFromSeed(settings.seed || new Date().getTime());
+    function NumberMakr(settings) {
+      if (settings === void 0) {
+        settings = {};
+      }
+      this.stateLength = settings.stateLength || 624;
+      this.statePeriod = settings.statePeriod || 397;
+      this.matrixA = settings.matrixA || 0x9908b0df;
+      this.maskUpper = settings.maskUpper || 0x80000000;
+      this.maskLower = settings.maskLower || 0x7fffffff;
+      this.stateVector = new Array(this.stateLength);
+      this.stateIndex = this.stateLength + 1;
+      this.matrixAMagic = new Array(0x0, this.matrixA);
+      this.resetFromSeed(settings.seed || new Date().getTime());
+    }
+    /* Simple gets
+     */
+    /**
+     * @returns The starting seed used to initialize.
+     */
+    NumberMakr.prototype.getSeed = function () {
+      return this.seed;
+    };
+    /**
+     * @returns The length of the state vector.
+     */
+    NumberMakr.prototype.getStateLength = function () {
+      return this.stateLength;
+    };
+    /**
+     * @returns The length of the state vector.
+     */
+    NumberMakr.prototype.getStatePeriod = function () {
+      return this.statePeriod;
+    };
+    /**
+     * @returns The length of the state vector.
+     */
+    NumberMakr.prototype.getMatrixA = function () {
+      return this.matrixA;
+    };
+    /**
+     * @returns The length of the state vector.
+     */
+    NumberMakr.prototype.getMaskUpper = function () {
+      return this.maskUpper;
+    };
+    /**
+     * @returns The length of the state vector.
+     */
+    NumberMakr.prototype.getMaskLower = function () {
+      return this.maskLower;
+    };
+    /* Resets
+     */
+    /**
+     * Initializes state from a new seed.
+     *
+     * @param seedNew   A new seed to reset from.
+     */
+    NumberMakr.prototype.resetFromSeed = function (seedNew) {
+      var s;
+      this.stateVector[0] = seedNew >>> 0;
+      for (
+        this.stateIndex = 1;
+        this.stateIndex < this.stateLength;
+        this.stateIndex += 1
+      ) {
+        s =
+          this.stateVector[this.stateIndex - 1] ^
+          (this.stateVector[this.stateIndex - 1] >>> 30);
+        this.stateVector[this.stateIndex] =
+          (((((s & 0xffff0000) >>> 16) * 1812433253) << 16) +
+            (s & 0x0000ffff) * 1812433253 +
+            this.stateIndex) >>>
+          0;
+      }
+      this.seed = seedNew;
+    };
+    /**
+     * Initializes state from an Array.
+     *
+     * @param keyInitial   An initial state to reset from.
+     * @param [keyLength]   The length of keyInitial (by default, keyInitial.length).
+     * @remarks   There was a slight change for C++, 2004/2/26.
+     */
+    NumberMakr.prototype.resetFromArray = function (keyInitial, keyLength) {
+      if (keyLength === void 0) {
+        keyLength = keyInitial.length;
+      }
+      var i = 1,
+        j = 0,
+        k,
+        s;
+      this.resetFromSeed(19650218);
+      if (typeof keyLength === "undefined") {
+        keyLength = keyInitial.length;
+      }
+      k = this.stateLength > keyLength ? this.stateLength : keyLength;
+      while (k > 0) {
+        s = this.stateVector[i - 1] ^ (this.stateVector[i - 1] >>> 30);
+        this.stateVector[i] =
+          (this.stateVector[i] ^
+            (((((s & 0xffff0000) >>> 16) * 1664525) << 16) +
+              (s & 0x0000ffff) * 1664525 +
+              keyInitial[j] +
+              j)) >>>
+          0;
+        i += 1;
+        j += 1;
+        if (i >= this.stateLength) {
+          this.stateVector[0] = this.stateVector[this.stateLength - 1];
+          i = 1;
         }
-        /* Simple gets
-        */
-        /**
-         * @returns The starting seed used to initialize.
-         */
-        NumberMakr.prototype.getSeed = function () {
-            return this.seed;
-        };
-        /**
-         * @returns The length of the state vector.
-         */
-        NumberMakr.prototype.getStateLength = function () {
-            return this.stateLength;
-        };
-        /**
-         * @returns The length of the state vector.
-         */
-        NumberMakr.prototype.getStatePeriod = function () {
-            return this.statePeriod;
-        };
-        /**
-         * @returns The length of the state vector.
-         */
-        NumberMakr.prototype.getMatrixA = function () {
-            return this.matrixA;
-        };
-        /**
-         * @returns The length of the state vector.
-         */
-        NumberMakr.prototype.getMaskUpper = function () {
-            return this.maskUpper;
-        };
-        /**
-         * @returns The length of the state vector.
-         */
-        NumberMakr.prototype.getMaskLower = function () {
-            return this.maskLower;
-        };
-        /* Resets
-        */
-        /**
-         * Initializes state from a new seed.
-         *
-         * @param seedNew   A new seed to reset from.
-         */
-        NumberMakr.prototype.resetFromSeed = function (seedNew) {
-            var s;
-            this.stateVector[0] = seedNew >>> 0;
-            for (this.stateIndex = 1; this.stateIndex < this.stateLength; this.stateIndex += 1) {
-                s = this.stateVector[this.stateIndex - 1] ^ (this.stateVector[this.stateIndex - 1] >>> 30);
-                this.stateVector[this.stateIndex] = ((((((s & 0xffff0000) >>> 16) * 1812433253) << 16)
-                    + (s & 0x0000ffff) * 1812433253) + this.stateIndex) >>> 0;
-            }
-            this.seed = seedNew;
-        };
-        /**
-         * Initializes state from an Array.
-         *
-         * @param keyInitial   An initial state to reset from.
-         * @param [keyLength]   The length of keyInitial (by default, keyInitial.length).
-         * @remarks   There was a slight change for C++, 2004/2/26.
-         */
-        NumberMakr.prototype.resetFromArray = function (keyInitial, keyLength) {
-            if (keyLength === void 0) { keyLength = keyInitial.length; }
-            var i = 1, j = 0, k, s;
-            this.resetFromSeed(19650218);
-            if (typeof (keyLength) === "undefined") {
-                keyLength = keyInitial.length;
-            }
-            k = this.stateLength > keyLength ? this.stateLength : keyLength;
-            while (k > 0) {
-                s = this.stateVector[i - 1] ^ (this.stateVector[i - 1] >>> 30);
-                this.stateVector[i] = (this.stateVector[i] ^ (((((s & 0xffff0000) >>> 16) * 1664525) << 16)
-                    + ((s & 0x0000ffff) * 1664525)) + keyInitial[j] + j) >>> 0;
-                i += 1;
-                j += 1;
-                if (i >= this.stateLength) {
-                    this.stateVector[0] = this.stateVector[this.stateLength - 1];
-                    i = 1;
-                }
-                if (j >= keyLength) {
-                    j = 0;
-                }
-            }
-            for (k = this.stateLength - 1; k; k -= 1) {
-                s = this.stateVector[i - 1] ^ (this.stateVector[i - 1] >>> 30);
-                this.stateVector[i] = ((this.stateVector[i] ^ (((((s & 0xffff0000) >>> 16) * 1566083941) << 16)
-                    + (s & 0x0000ffff) * 1566083941)) - i) >>> 0;
-                i += 1;
-                if (i >= this.stateLength) {
-                    this.stateVector[0] = this.stateVector[this.stateLength - 1];
-                    i = 1;
-                }
-            }
-            this.stateVector[0] = 0x80000000;
-            this.seed = keyInitial;
-        };
-        /* Random number generation
-        */
-        /**
-         * @returns A random Number in [0,0xffffffff].
-         */
-        NumberMakr.prototype.randomInt32 = function () {
-            var y, kk;
-            if (this.stateIndex >= this.stateLength) {
-                if (this.stateIndex === this.stateLength + 1) {
-                    this.resetFromSeed(5489);
-                }
-                for (kk = 0; kk < this.stateLength - this.statePeriod; kk += 1) {
-                    y = (this.stateVector[kk] & this.maskUpper)
-                        | (this.stateVector[kk + 1] & this.maskLower);
-                    this.stateVector[kk] = this.stateVector[kk + this.statePeriod]
-                        ^ (y >>> 1)
-                        ^ this.matrixAMagic[y & 0x1];
-                }
-                for (; kk < this.stateLength - 1; kk += 1) {
-                    y = (this.stateVector[kk] & this.maskUpper)
-                        | (this.stateVector[kk + 1] & this.maskLower);
-                    this.stateVector[kk] = this.stateVector[kk + (this.statePeriod - this.stateLength)]
-                        ^ (y >>> 1)
-                        ^ this.matrixAMagic[y & 0x1];
-                }
-                y = (this.stateVector[this.stateLength - 1] & this.maskUpper)
-                    | (this.stateVector[0] & this.maskLower);
-                this.stateVector[this.stateLength - 1] = this.stateVector[this.statePeriod - 1]
-                    ^ (y >>> 1) ^ this.matrixAMagic[y & 0x1];
-                this.stateIndex = 0;
-            }
-            y = this.stateVector[this.stateIndex];
-            this.stateIndex += 1;
-            y ^= (y >>> 11);
-            y ^= (y << 7) & 0x9d2c5680;
-            y ^= (y << 15) & 0xefc60000;
-            y ^= (y >>> 18);
-            return y >>> 0;
-        };
-        /**
-         * @returns A random number in [0,1).
-         * @remarks Divided by 2^32.
-         */
-        NumberMakr.prototype.random = function () {
-            return this.randomInt32() * (1.0 / 4294967296.0);
-        };
-        /**
-         * @returns A random number in [0,0x7fffffff].
-         */
-        NumberMakr.prototype.randomInt31 = function () {
-            return this.randomInt32() >>> 1;
-        };
-        /* Real number generators (due to Isaku Wada, 2002/01/09)
-        */
-        /**
-         * @returns A random real Number in [0,1].
-         * @remarks Divided by 2 ^ 32 - 1.
-         */
-        NumberMakr.prototype.randomReal1 = function () {
-            return this.randomInt32() * (1.0 / 4294967295.0);
-        };
-        /**
-         * @returns A random real Number in (0,1).
-         * @remarks Divided by 2 ^ 32.
-         */
-        NumberMakr.prototype.randomReal3 = function () {
-            return (this.randomInt32() + 0.5) * (1.0 / 4294967296.0);
-        };
-        /**
-         * @returns A random real Number in [0,1) with 53-bit resolution.
-         */
-        NumberMakr.prototype.randomReal53Bit = function () {
-            var a = this.randomInt32() >>> 5, b = this.randomInt32() >>> 6;
-            return (a * 67108864.0 + b) * (1.0 / 9007199254740992.0);
-        };
-        /* Ranged Number generators
-        */
-        /**
-         * @param max   A maximum value to return under.
-         * @returns A random number in [0,max).
-         */
-        NumberMakr.prototype.randomUnder = function (max) {
-            return this.random() * max;
-        };
-        /**
-         * @param min   A minimum value to return.
-         * @param max   A maximum value  to return under.
-         * @returns A random number in [min,max).
-         */
-        NumberMakr.prototype.randomWithin = function (min, max) {
-            return this.randomUnder(max - min) + min;
-        };
-        /* Ranged integer generators
-        */
-        /**
-         * @param max   A maximum value to return under.
-         * @returns a random integer in [0,max).
-         */
-        NumberMakr.prototype.randomInt = function (max) {
-            return this.randomUnder(max) | 0;
-        };
-        /**
-         * @param min   A minimum value to return.
-         * @param max   A maximum value to return under.
-         * @returns a random integer in [min,max).
-         */
-        NumberMakr.prototype.randomIntWithin = function (min, max) {
-            return (this.randomUnder(max - min) + min) | 0;
-        };
-        /**
-         * @returns Either true or false, with 50% probability each.
-         */
-        NumberMakr.prototype.randomBoolean = function () {
-            return this.randomInt(2) === 1;
-        };
-        /**
-         * @param probability   How likely the returned Boolean will be
-         *                      true, in [0, 1]. If >= 1, always true.
-         * @returns Either true or false, with the probability of true
-         *          equal to the given probability.
-         */
-        NumberMakr.prototype.randomBooleanProbability = function (probability) {
-            return this.random() < probability;
-        };
-        /**
-         * @param numerator   The numerator of a fraction.
-         * @param denominator   The denominator of a fraction.
-         * @returns   Either true or false, with a probability equal to the
-         *            given fraction.
-         */
-        NumberMakr.prototype.randomBooleanFraction = function (numerator, denominator) {
-            return this.random() <= (numerator / denominator);
-        };
-        /**
-         * @param array   Any Array of values.
-         * @returns A random index, from 0 to the given Array's length.
-         */
-        NumberMakr.prototype.randomArrayIndex = function (array) {
-            return this.randomIntWithin(0, array.length);
-        };
-        /**
-         * @param array   Any Array of values.
-         * @returns A random element from within the given Array.
-         */
-        NumberMakr.prototype.randomArrayMember = function (array) {
-            return array[this.randomArrayIndex(array)];
-        };
-        return NumberMakr;
-    })();
-    NumberMakr_1.NumberMakr = NumberMakr;
+        if (j >= keyLength) {
+          j = 0;
+        }
+      }
+      for (k = this.stateLength - 1; k; k -= 1) {
+        s = this.stateVector[i - 1] ^ (this.stateVector[i - 1] >>> 30);
+        this.stateVector[i] =
+          ((this.stateVector[i] ^
+            (((((s & 0xffff0000) >>> 16) * 1566083941) << 16) +
+              (s & 0x0000ffff) * 1566083941)) -
+            i) >>>
+          0;
+        i += 1;
+        if (i >= this.stateLength) {
+          this.stateVector[0] = this.stateVector[this.stateLength - 1];
+          i = 1;
+        }
+      }
+      this.stateVector[0] = 0x80000000;
+      this.seed = keyInitial;
+    };
+    /* Random number generation
+     */
+    /**
+     * @returns A random Number in [0,0xffffffff].
+     */
+    NumberMakr.prototype.randomInt32 = function () {
+      var y, kk;
+      if (this.stateIndex >= this.stateLength) {
+        if (this.stateIndex === this.stateLength + 1) {
+          this.resetFromSeed(5489);
+        }
+        for (kk = 0; kk < this.stateLength - this.statePeriod; kk += 1) {
+          y =
+            (this.stateVector[kk] & this.maskUpper) |
+            (this.stateVector[kk + 1] & this.maskLower);
+          this.stateVector[kk] =
+            this.stateVector[kk + this.statePeriod] ^
+            (y >>> 1) ^
+            this.matrixAMagic[y & 0x1];
+        }
+        for (; kk < this.stateLength - 1; kk += 1) {
+          y =
+            (this.stateVector[kk] & this.maskUpper) |
+            (this.stateVector[kk + 1] & this.maskLower);
+          this.stateVector[kk] =
+            this.stateVector[kk + (this.statePeriod - this.stateLength)] ^
+            (y >>> 1) ^
+            this.matrixAMagic[y & 0x1];
+        }
+        y =
+          (this.stateVector[this.stateLength - 1] & this.maskUpper) |
+          (this.stateVector[0] & this.maskLower);
+        this.stateVector[this.stateLength - 1] =
+          this.stateVector[this.statePeriod - 1] ^
+          (y >>> 1) ^
+          this.matrixAMagic[y & 0x1];
+        this.stateIndex = 0;
+      }
+      y = this.stateVector[this.stateIndex];
+      this.stateIndex += 1;
+      y ^= y >>> 11;
+      y ^= (y << 7) & 0x9d2c5680;
+      y ^= (y << 15) & 0xefc60000;
+      y ^= y >>> 18;
+      return y >>> 0;
+    };
+    /**
+     * @returns A random number in [0,1).
+     * @remarks Divided by 2^32.
+     */
+    NumberMakr.prototype.random = function () {
+      return this.randomInt32() * (1.0 / 4294967296.0);
+    };
+    /**
+     * @returns A random number in [0,0x7fffffff].
+     */
+    NumberMakr.prototype.randomInt31 = function () {
+      return this.randomInt32() >>> 1;
+    };
+    /* Real number generators (due to Isaku Wada, 2002/01/09)
+     */
+    /**
+     * @returns A random real Number in [0,1].
+     * @remarks Divided by 2 ^ 32 - 1.
+     */
+    NumberMakr.prototype.randomReal1 = function () {
+      return this.randomInt32() * (1.0 / 4294967295.0);
+    };
+    /**
+     * @returns A random real Number in (0,1).
+     * @remarks Divided by 2 ^ 32.
+     */
+    NumberMakr.prototype.randomReal3 = function () {
+      return (this.randomInt32() + 0.5) * (1.0 / 4294967296.0);
+    };
+    /**
+     * @returns A random real Number in [0,1) with 53-bit resolution.
+     */
+    NumberMakr.prototype.randomReal53Bit = function () {
+      var a = this.randomInt32() >>> 5,
+        b = this.randomInt32() >>> 6;
+      return (a * 67108864.0 + b) * (1.0 / 9007199254740992.0);
+    };
+    /* Ranged Number generators
+     */
+    /**
+     * @param max   A maximum value to return under.
+     * @returns A random number in [0,max).
+     */
+    NumberMakr.prototype.randomUnder = function (max) {
+      return this.random() * max;
+    };
+    /**
+     * @param min   A minimum value to return.
+     * @param max   A maximum value  to return under.
+     * @returns A random number in [min,max).
+     */
+    NumberMakr.prototype.randomWithin = function (min, max) {
+      return this.randomUnder(max - min) + min;
+    };
+    /* Ranged integer generators
+     */
+    /**
+     * @param max   A maximum value to return under.
+     * @returns a random integer in [0,max).
+     */
+    NumberMakr.prototype.randomInt = function (max) {
+      return this.randomUnder(max) | 0;
+    };
+    /**
+     * @param min   A minimum value to return.
+     * @param max   A maximum value to return under.
+     * @returns a random integer in [min,max).
+     */
+    NumberMakr.prototype.randomIntWithin = function (min, max) {
+      return (this.randomUnder(max - min) + min) | 0;
+    };
+    /**
+     * @returns Either true or false, with 50% probability each.
+     */
+    NumberMakr.prototype.randomBoolean = function () {
+      return this.randomInt(2) === 1;
+    };
+    /**
+     * @param probability   How likely the returned Boolean will be
+     *                      true, in [0, 1]. If >= 1, always true.
+     * @returns Either true or false, with the probability of true
+     *          equal to the given probability.
+     */
+    NumberMakr.prototype.randomBooleanProbability = function (probability) {
+      return this.random() < probability;
+    };
+    /**
+     * @param numerator   The numerator of a fraction.
+     * @param denominator   The denominator of a fraction.
+     * @returns   Either true or false, with a probability equal to the
+     *            given fraction.
+     */
+    NumberMakr.prototype.randomBooleanFraction = function (
+      numerator,
+      denominator,
+    ) {
+      return this.random() <= numerator / denominator;
+    };
+    /**
+     * @param array   Any Array of values.
+     * @returns A random index, from 0 to the given Array's length.
+     */
+    NumberMakr.prototype.randomArrayIndex = function (array) {
+      return this.randomIntWithin(0, array.length);
+    };
+    /**
+     * @param array   Any Array of values.
+     * @returns A random element from within the given Array.
+     */
+    NumberMakr.prototype.randomArrayMember = function (array) {
+      return array[this.randomArrayIndex(array)];
+    };
+    return NumberMakr;
+  })();
+  NumberMakr_1.NumberMakr = NumberMakr;
 })(NumberMakr || (NumberMakr = {}));

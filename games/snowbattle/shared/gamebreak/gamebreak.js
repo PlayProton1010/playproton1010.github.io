@@ -1,1 +1,1 @@
-function InitExternEval(){}
+function InitExternEval() {}

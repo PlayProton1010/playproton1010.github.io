@@ -4,7 +4,10 @@
     format("TrueType");
 }
 body {
-  font-family: poiret one, Helvetica, Georgia;
+  font-family:
+    poiret one,
+    Helvetica,
+    Georgia;
   background-color: #c8c8c8;
   overflow: hidden;
   padding: 0;

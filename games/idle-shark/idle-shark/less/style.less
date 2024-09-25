@@ -2,29 +2,29 @@
   MIXINS
 -------------------------------------------------------*/
 // default colours i guess!
-@color-lighter: #7788AA;
-@color-light: #4E638E;
-@color-med: #2E4372;
-@color-dark: #152A55;
+@color-lighter: #7788aa;
+@color-light: #4e638e;
+@color-med: #2e4372;
+@color-dark: #152a55;
 @color-darker: #061639;
 
 // select palette
 @palette: "marine"; // default is marine
 @import "@{palette}";
 
-@color-danger-lighter: #975F5F;
+@color-danger-lighter: #975f5f;
 @color-danger-light: #714141;
-@color-danger-med: #6B2B2B;
-@color-danger-dark: #5C1919;
+@color-danger-med: #6b2b2b;
+@color-danger-dark: #5c1919;
 @color-danger-darker: #450808;
 
-@color-essence: #ACE3D1;
-@color-numen: #FFFFFF;
+@color-essence: #ace3d1;
+@color-numen: #ffffff;
 
-@color-error: #E03030;
+@color-error: #e03030;
 @color-error-bg: #800000;
 
-@color-discovery: #ACE3D1;
+@color-discovery: #ace3d1;
 @color-discovery-bg: darken(@color-discovery, 15%);
 @color-discovery-bg-dark: darken(@color-discovery, 30%);
 @color-discovery-bg-darker: darken(@color-discovery, 45%);
@@ -65,7 +65,7 @@
   -moz-transform: translateX(@x) translateY(@y);
   -ms-transform: translateX(@x) translateY(@y);
   -o-transform: translateX(@x) translateY(@y);
-  transform: translateX(@x) translateY(@y)
+  transform: translateX(@x) translateY(@y);
 }
 
 .opacity (@opacity: 0.5) {
@@ -246,11 +246,12 @@ pre {
 #title {
   clear: both;
   .section;
-  background: linear-gradient(
-          rgba(red(@color-med), green(@color-med), blue(@color-med), 0.2),
-          rgba(red(@color-med), green(@color-med), blue(@color-med), 0.2)
-  ),
-  @color-med url("../img/sharklogo.png") no-repeat center;
+  background:
+    linear-gradient(
+      rgba(red(@color-med), green(@color-med), blue(@color-med), 0.2),
+      rgba(red(@color-med), green(@color-med), blue(@color-med), 0.2)
+    ),
+    @color-med url("../img/sharklogo.png") no-repeat center;
   text-shadow: 2px 2px 3px @color-darker;
 
   h1 {
@@ -291,7 +292,8 @@ pre {
 }
 
 #titlemenu {
-  a:link, a:visited {
+  a:link,
+  a:visited {
     color: lighten(@color-lighter, 15%);
   }
   a:hover {
@@ -304,7 +306,6 @@ pre {
 }
 
 #contentMenu {
-
   overflow: hidden;
 
   ul {
@@ -363,7 +364,7 @@ pre {
     //max-width: 90%;
 
     h3 {
-      padding: .2em;
+      padding: 0.2em;
       width: auto;
       margin: auto;
       text-align: center;
@@ -418,14 +419,15 @@ pre {
 
 #resource-numen {
   // fancier schmancier special rule
-  text-shadow: 0 0 0.3em @color-numen,
-  0 0 0.6em @color-numen,
-  0 0 0.8em @color-numen;
+  text-shadow:
+    0 0 0.3em @color-numen,
+    0 0 0.6em @color-numen,
+    0 0 0.8em @color-numen;
 }
 
 #resource-essence {
   // fancy schmancy special rule
-  text-shadow: 0 0 0.6em @color-essence,;
+  text-shadow: 0 0 0.6em @color-essence;
 }
 
 #content {
@@ -450,7 +452,7 @@ pre {
 
 #buttonList {
   .inner-section;
-  padding: 1.0em;
+  padding: 1em;
 }
 
 .pileArrangement {
@@ -479,7 +481,6 @@ button.newlyDiscovered {
 }
 
 #homeTabs {
-
   margin-bottom: 1em;
 
   ul {
@@ -525,8 +526,7 @@ button.newlyDiscovered {
 
 #statsContainer {
   .inner-section;
-  padding: 1.0em;
-
+  padding: 1em;
 }
 
 .statsInnerContainer {
@@ -629,7 +629,7 @@ button.newlyDiscovered {
   float: left;
   margin: auto;
   width: 10em;
-  background: @color-danger-darker url('../img/recyclerbg.png') center;
+  background: @color-danger-darker url("../img/recyclerbg.png") center;
   color: lighten(@color-danger-lighter, 30%);
   border: 0.1em solid @color-danger-lighter;
   .box-shadow-inset(0, 0, 15px, 15px, @color-danger-darker);
@@ -733,7 +733,6 @@ button {
       .clear-box-shadow();
       background-color: @color-darker;
     }
-
   }
 }
 
@@ -774,7 +773,12 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(red(@color-darker),green(@color-darker),blue(@color-darker), 0.8);
+  background: rgba(
+    red(@color-darker),
+    green(@color-darker),
+    blue(@color-darker),
+    0.8
+  );
   pointer-events: none;
 }
 
@@ -831,7 +835,6 @@ button {
 // PANE
 
 #pane {
-
   background-color: @color-dark;
   .box-shadow-inset(0, 0, 5px, 5px, darken(@color-darker, 2%));
   .border-radius(10px);
@@ -865,7 +868,6 @@ button {
     h3 {
       display: inline;
     }
-
   }
 
   #paneHeaderCloseButtonDiv {
@@ -921,36 +923,39 @@ button {
 // GATEWAY STUFF
 
 .gateway {
-
   text-align: center;
   text-shadow: 0 0 0.7em lighten(@color-discovery, 5%);
 
   h1 {
     text-align: center;
     color: lighten(@color-discovery, 10%);
-    text-shadow: 0 0 0.5em lighten(@color-discovery, 20%),
-    0 0 1em lighten(@color-discovery, 20%);
+    text-shadow:
+      0 0 0.5em lighten(@color-discovery, 20%),
+      0 0 1em lighten(@color-discovery, 20%);
   }
 
   h2 {
     text-align: center;
     color: @color-discovery;
-    text-shadow: 0 0 0.5em lighten(@color-discovery, 10%),
-    0 0 1em lighten(@color-discovery, 10%);
+    text-shadow:
+      0 0 0.5em lighten(@color-discovery, 10%),
+      0 0 1em lighten(@color-discovery, 10%);
   }
 
   h3 {
     text-align: center;
     color: @color-discovery;
-    text-shadow: 0 0 0.5em lighten(@color-discovery, 10%),
-    0 0 1em lighten(@color-discovery, 10%);
+    text-shadow:
+      0 0 0.5em lighten(@color-discovery, 10%),
+      0 0 1em lighten(@color-discovery, 10%);
   }
 
   h4 {
     text-align: center;
     color: @color-discovery;
-    text-shadow: 0 0 0.5em lighten(@color-discovery, 10%),
-    0 0 1em lighten(@color-discovery, 10%);
+    text-shadow:
+      0 0 0.5em lighten(@color-discovery, 10%),
+      0 0 1em lighten(@color-discovery, 10%);
   }
 
   .medDesc {
@@ -1006,13 +1011,16 @@ button {
     div {
       background-color: @color-discovery-bg-darkest;
       .clear-box-shadow();
-
     }
-
   }
 
   div.tint:before {
-    background: rgba(red(@color-discovery-bg-darkest),green(@color-discovery-bg-darkest),blue(@color-discovery-bg-darkest), 0.8);
+    background: rgba(
+      red(@color-discovery-bg-darkest),
+      green(@color-discovery-bg-darkest),
+      blue(@color-discovery-bg-darkest),
+      0.8
+    );
   }
 }
 
@@ -1023,7 +1031,6 @@ button {
 button.gateway {
   .gatewayButton();
 }
-
 
 #pane.gateway {
   .border-radius(3em);
@@ -1041,7 +1048,7 @@ button.gateway {
 }
 
 #overlay.gateway {
-  .opacity(1.0);
+  .opacity(1);
   background-color: @color-discovery-bg-darkest;
 }
 
@@ -1057,9 +1064,10 @@ button.gateway {
 
 .gateway .numenCount {
   color: @color-numen;
-  text-shadow: 0 0 0.3em @color-numen,
-  0 0 0.6em @color-numen,
-  0 0 0.8em @color-numen;
+  text-shadow:
+    0 0 0.3em @color-numen,
+    0 0 0.6em @color-numen,
+    0 0 0.8em @color-numen;
 }
 
 .gatewayButtonList {
@@ -1134,7 +1142,10 @@ button.planetButton {
   }
 
   &:hover {
-    text-shadow: 0 0 0.3em lighten(@color-discovery, 5%), 0 0 0.6em lighten(@color-discovery, 10%), 0 0 0.9em lighten(@color-discovery, 15%);
+    text-shadow:
+      0 0 0.3em lighten(@color-discovery, 5%),
+      0 0 0.6em lighten(@color-discovery, 10%),
+      0 0 0.9em lighten(@color-discovery, 15%);
     .clear-box-shadow();
 
     div {

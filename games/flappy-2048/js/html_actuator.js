@@ -1,19 +1,19 @@
 function HTMLActuator() {
-  this.gridContainer    = document.querySelector(".grid-container");
+  this.gridContainer = document.querySelector(".grid-container");
   // this.tileContainer    = document.querySelector(".tile-container");
-  this.scoreContainer   = document.querySelector(".score-container");
-  this.bestContainer    = document.querySelector(".best-container");
+  this.scoreContainer = document.querySelector(".score-container");
+  this.bestContainer = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
-  this.birdobj          = document.querySelector(".tile-bird");
-  this.birdinn          = document.querySelector(".tile-bird .tile-inner");
-  this.blockobja        = document.querySelector(".tile-block-a");
-  this.blockobjb        = document.querySelector(".tile-block-b");
-  this.blockobjc        = document.querySelector(".tile-block-c");
-  this.blockobjd        = document.querySelector(".tile-block-d");
-  this.blockinna        = document.querySelector(".tile-block-a .tile-inner");
-  this.blockinnb        = document.querySelector(".tile-block-b .tile-inner");
-  this.blockinnc        = document.querySelector(".tile-block-c .tile-inner");
-  this.blockinnd        = document.querySelector(".tile-block-d .tile-inner");
+  this.birdobj = document.querySelector(".tile-bird");
+  this.birdinn = document.querySelector(".tile-bird .tile-inner");
+  this.blockobja = document.querySelector(".tile-block-a");
+  this.blockobjb = document.querySelector(".tile-block-b");
+  this.blockobjc = document.querySelector(".tile-block-c");
+  this.blockobjd = document.querySelector(".tile-block-d");
+  this.blockinna = document.querySelector(".tile-block-a .tile-inner");
+  this.blockinnb = document.querySelector(".tile-block-b .tile-inner");
+  this.blockinnc = document.querySelector(".tile-block-c .tile-inner");
+  this.blockinnd = document.querySelector(".tile-block-d .tile-inner");
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
@@ -23,18 +23,18 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 
   var s = Math.floor(metadata.score);
 
-       if (s > 2048) classes.push("tile-super")
-  else if (s > 1024) classes.push("tile-2048")
-  else if (s >  512) classes.push("tile-1024")
-  else if (s >  256) classes.push("tile-512")
-  else if (s >  128) classes.push("tile-256")
-  else if (s >   64) classes.push("tile-128")
-  else if (s >   32) classes.push("tile-64")
-  else if (s >   16) classes.push("tile-32")
-  else if (s >    8) classes.push("tile-16")
-  else if (s >    4) classes.push("tile-8")
-  else if (s >    2) classes.push("tile-4")
-  else               classes.push("tile-2");
+  if (s > 2048) classes.push("tile-super");
+  else if (s > 1024) classes.push("tile-2048");
+  else if (s > 512) classes.push("tile-1024");
+  else if (s > 256) classes.push("tile-512");
+  else if (s > 128) classes.push("tile-256");
+  else if (s > 64) classes.push("tile-128");
+  else if (s > 32) classes.push("tile-64");
+  else if (s > 16) classes.push("tile-32");
+  else if (s > 8) classes.push("tile-16");
+  else if (s > 4) classes.push("tile-8");
+  else if (s > 2) classes.push("tile-4");
+  else classes.push("tile-2");
 
   this.applyClasses(this.birdobj, classes);
 
@@ -43,13 +43,13 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 
   this.birdobj.style.top = metadata.birdpos * zonesize + "px";
 
-  this.blockobja.style.top = [0.5 , 0   , 0   ][metadata.ab] * zonesize + "px";
+  this.blockobja.style.top = [0.5, 0, 0][metadata.ab] * zonesize + "px";
   this.blockobjb.style.top = [0.75, 0.75, 0.25][metadata.ab] * zonesize + "px";
-  this.blockobjc.style.top = [0.5 , 0   , 0   ][metadata.cd] * zonesize + "px";
+  this.blockobjc.style.top = [0.5, 0, 0][metadata.cd] * zonesize + "px";
   this.blockobjd.style.top = [0.75, 0.75, 0.25][metadata.cd] * zonesize + "px";
 
-  this.blockobja.style.left = (0.5  - morepos) * zonesize + "px";
-  this.blockobjb.style.left = (0.5  - morepos) * zonesize + "px";
+  this.blockobja.style.left = (0.5 - morepos) * zonesize + "px";
+  this.blockobjb.style.left = (0.5 - morepos) * zonesize + "px";
   this.blockobjc.style.left = (1.25 - morepos) * zonesize + "px";
   this.blockobjd.style.left = (1.25 - morepos) * zonesize + "px";
 
@@ -75,9 +75,9 @@ HTMLActuator.prototype.clearContainer = function (container) {
 HTMLActuator.prototype.addTile = function (tile) {
   var self = this;
 
-  var wrapper   = document.createElement("div");
-  var inner     = document.createElement("div");
-  var position  = tile.previousPosition || { x: tile.x, y: tile.y };
+  var wrapper = document.createElement("div");
+  var inner = document.createElement("div");
+  var position = tile.previousPosition || { x: tile.x, y: tile.y };
   var positionClass = this.positionClass(position);
 
   // We can't use classlist because it somehow glitches when replacing classes
@@ -151,7 +151,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 };
 
 HTMLActuator.prototype.message = function (won) {
-  var type    = won ? "game-won" : "game-over";
+  var type = won ? "game-won" : "game-over";
   var message = won ? "You win!" : "Game over!";
 
   this.messageContainer.classList.add(type);

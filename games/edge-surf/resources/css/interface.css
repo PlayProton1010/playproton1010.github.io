@@ -4,9 +4,29 @@
  */
 
 /* minimal css reset */
-html, body, div, h1, h2, h3, h4, h5, h6, a, p, img, ul, li, button { padding: 0; margin: 0; border: 0; outline: 0; }
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+img,
+ul,
+li,
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
 
-html, body {
+html,
+body {
   width: 100vw; /* fullscreen */
   height: 100vh; /* fullscreen */
   overflow: hidden;
@@ -18,7 +38,11 @@ html, body {
 }
 
 /* game layers fill entire page */
-#game-canvas, #game-bg, #game-gradient, #game-ui, #game-tint {
+#game-canvas,
+#game-bg,
+#game-gradient,
+#game-ui,
+#game-tint {
   overflow: hidden;
   position: absolute;
   user-select: none;
@@ -51,8 +75,6 @@ html[dir="rtl"].icon-arrow-left {
   position: fixed;
 }
 
-
-
 /* page structure */
 
 #game-gradient {
@@ -60,9 +82,11 @@ html[dir="rtl"].icon-arrow-left {
   pointer-events: none;
 }
 
-@media (forced-colors:active) {
+@media (forced-colors: active) {
   /* CanvasText, LinkText, VisitedText, ActiveText, GrayText, Field, FieldText, HighlightText, Highlight (txt bg), ButtonText, ButtonFace (btn bg) */
-  #game-bg { background: Canvas !important; }
+  #game-bg {
+    background: Canvas !important;
+  }
 }
 
 #game-bg {
@@ -88,9 +112,15 @@ html[dir="rtl"].icon-arrow-left {
 #game-tint {
   pointer-events: none;
   z-index: 4;
-  background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.1) 100%);
-  transition: opacity 0.35s, visibility 0s 0.35s;
-  transition-timing-function: cubic-bezier(0.30, 0.20, 0.20, 1.00);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transition:
+    opacity 0.35s,
+    visibility 0s 0.35s;
+  transition-timing-function: cubic-bezier(0.3, 0.2, 0.2, 1);
   visibility: hidden;
   opacity: 0;
   backdrop-filter: blur(0px);
@@ -137,18 +167,28 @@ html[dir="rtl"].icon-arrow-left {
 
 /* shrinks title for super small screens */
 @media screen and (max-height: 480px) {
-  #ui-title { line-height: 36px; font-size: 36px; }
-  #ui-subtitle { line-height: 20px; font-size: 20px; }
+  #ui-title {
+    line-height: 36px;
+    font-size: 36px;
+  }
+  #ui-subtitle {
+    line-height: 20px;
+    font-size: 20px;
+  }
 }
 
 /* hides mode title on tiny screens */
 @media screen and (max-height: 360px) {
-  #ui-subtitle { visibility: hidden; }
+  #ui-subtitle {
+    visibility: hidden;
+  }
 }
 
 /* hides game title on tiny screens */
 @media screen and (max-height: 280px) {
-  #ui-title { visibility: hidden; }
+  #ui-title {
+    visibility: hidden;
+  }
 }
 
 #ui-selector {
@@ -158,29 +198,34 @@ html[dir="rtl"].icon-arrow-left {
   width: 480px; /* fullscreen minus 32 padding */
   height: 128px;
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
 #ui-selector span {
   border-radius: 4px;
-  background-color: rgba(255,255,255,0);
+  background-color: rgba(255, 255, 255, 0);
   transition: background-color 0.1s;
 }
 
 #ui-selector span:hover {
-  background: rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.4);
   cursor: pointer;
 }
 
 /* shrink menu arrows on narrow screens */
 @media screen and (max-width: 520px) {
-  #ui-selector { left: calc(50vw - 220px); width: 440px; }
+  #ui-selector {
+    left: calc(50vw - 220px);
+    width: 440px;
+  }
 }
 
 /* hide menu arrows on narrow screens */
 @media screen and (max-width: 420px) {
-  #ui-selector span { visibility: hidden;  }
+  #ui-selector span {
+    visibility: hidden;
+  }
 }
 
 #ui-instruct {
@@ -196,32 +241,35 @@ html[dir="rtl"].icon-arrow-left {
 }
 
 #instruct-content.tinted {
-  background-color: rgba(255,255,255,0.6);
-  box-shadow: 0px 16px 24px rgba(0,0,0,0.16);
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
   border-radius: 4px;
 }
 
-@supports not (-moz-appearance:none) {
+@supports not (-moz-appearance: none) {
   #instruct-content.tinted {
-      backdrop-filter: blur(32px);
-      -webkit-backdrop-filter: blur(32px);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
   }
 } /* Backdrop filter is broken on Firefox */
 
-#instruct-icon { /* xbox + ps */
+#instruct-icon {
+  /* xbox + ps */
   display: inline-block;
   vertical-align: middle;
   width: 32px;
   height: 32px;
 }
 
-#instruct-action { /* spacebar, double tap, double click */
+#instruct-action {
+  /* spacebar, double tap, double click */
   display: inline-block;
   margin: 0 8px;
   vertical-align: middle;
 }
 
-#instruct-action.outline { /* spacebar, double tap, double click */
+#instruct-action.outline {
+  /* spacebar, double tap, double click */
   padding: 4px 12px 5px;
   border: 2px solid #000000;
   border-radius: 4px;
@@ -243,8 +291,10 @@ html[dir="rtl"].icon-arrow-left {
   top: calc(100vh * 0.75 - 24px);
   width: calc(100vw - 32px); /* fullscreen minus 32 padding */
   text-align: center;
-  transition: opacity 0.5s, visibility 0s 0.5s;
-  transition-timing-function: cubic-bezier(0.30, 0.20, 0.20, 1.00);
+  transition:
+    opacity 0.5s,
+    visibility 0s 0.5s;
+  transition-timing-function: cubic-bezier(0.3, 0.2, 0.2, 1);
   visibility: hidden;
   opacity: 0;
 }
@@ -260,8 +310,8 @@ html[dir="rtl"].icon-arrow-left {
   padding: 12px 20px;
   font-weight: 600;
   border-radius: 4px;
-  color: #FFFFFF;
-  background-color: rgba(0,0,0,0.7);
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
 }
@@ -271,7 +321,7 @@ html[dir="rtl"].icon-arrow-left {
   vertical-align: -33%;
   align-items: center;
   font-weight: normal;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 4px 8px 2px;
   margin-inline-start: 12px;
   border-radius: 4px;
@@ -281,7 +331,7 @@ html[dir="rtl"].icon-arrow-left {
 }
 
 #notify-shareLink:hover {
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 #notify-shareText {
@@ -324,12 +374,24 @@ html[dir="rtl"].icon-arrow-left {
   background-size: 1920px 512px;
 }
 
-.life-full { background-position: -1px -1px; }
-.life-empty { background-position: -1px -25px; }
-.boost-full { background-position: -25px -1px; }
-.boost-empty { background-position: -25px -25px; }
-.shield { background-position: -49px -1px; }
-.infinite { background-position: -49px -25px; }
+.life-full {
+  background-position: -1px -1px;
+}
+.life-empty {
+  background-position: -1px -25px;
+}
+.boost-full {
+  background-position: -25px -1px;
+}
+.boost-empty {
+  background-position: -25px -25px;
+}
+.shield {
+  background-position: -49px -1px;
+}
+.infinite {
+  background-position: -49px -25px;
+}
 
 #score-icon {
   display: inline-block;
@@ -354,10 +416,12 @@ html[dir="rtl"].icon-arrow-left {
 }
 
 #ui-notify .icon-fill {
-  fill: #FFFFFF;
+  fill: #ffffff;
 }
 
-@media (forced-colors:active) {
+@media (forced-colors: active) {
   /* CanvasText, LinkText, VisitedText, ActiveText, GrayText, Field, FieldText, HighlightText, Highlight (txt bg), ButtonText, ButtonFace (btn bg) */
-  .icon-fill { fill: CanvasText !important; }
+  .icon-fill {
+    fill: CanvasText !important;
+  }
 }

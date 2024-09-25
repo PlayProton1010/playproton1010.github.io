@@ -10,15 +10,15 @@
  * @param {string} s The string to convert.
  * @return {!TrustedHTML} A TrustedHTML containing input string.
  */
-const toTrustedHtml = (function() {
+const toTrustedHtml = (function () {
   /** @type {!TrustedTypePolicy} */
   let unsanitizedPolicy;
 
-  return function(s) {
+  return function (s) {
     if (!unsanitizedPolicy) {
-      unsanitizedPolicy = trustedTypes.createPolicy(
-          'parse-html-subset',
-          {createHTML: unsanitizedHtml => unsanitizedHtml});
+      unsanitizedPolicy = trustedTypes.createPolicy("parse-html-subset", {
+        createHTML: (unsanitizedHtml) => unsanitizedHtml,
+      });
     }
     return unsanitizedPolicy.createHTML(s);
   };
@@ -41,12 +41,11 @@ const toTrustedHtml = (function() {
  *     attributes.
  * @return {string}
  */
-/* #export */ const sanitizeInnerHtml = function(rawString, opts) {
+/* #export */ const sanitizeInnerHtml = function (rawString, opts) {
   opts = opts || {};
-  return parseHtmlSubset('<b>' + rawString + '</b>', opts.tags, opts.attrs)
-      .firstChild.innerHTML;
+  return parseHtmlSubset("<b>" + rawString + "</b>", opts.tags, opts.attrs)
+    .firstChild.innerHTML;
 };
-
 
 /**
  * Parses a very small subset of HTML. This ensures that insecure HTML /
@@ -58,8 +57,8 @@ const toTrustedHtml = (function() {
  * @throws {Error} In case of non supported markup.
  * @return {!DocumentFragment} A document fragment containing the DOM tree.
  */
-/* #export */ const parseHtmlSubset = (function() {
-  'use strict';
+/* #export */ const parseHtmlSubset = (function () {
+  "use strict";
 
   /** @typedef {function(!Node, string):boolean} */
   let AllowFunction;
@@ -74,22 +73,25 @@ const toTrustedHtml = (function() {
    */
   const allowedAttributes = new Map([
     [
-      'href',
+      "href",
       (node, value) => {
         // Only allow a[href] starting with edge:// or https:// or equaling
         // to #.
-        return node.tagName === 'A' &&
-            (value.startsWith('edge://') || value.startsWith('https://') ||
-             value === '#');
-      }
+        return (
+          node.tagName === "A" &&
+          (value.startsWith("edge://") ||
+            value.startsWith("https://") ||
+            value === "#")
+        );
+      },
     ],
     [
-      'target',
+      "target",
       (node, value) => {
         // Only allow a[target='_blank'].
         // TODO(dbeam): are there valid use cases for target !== '_blank'?
-        return node.tagName === 'A' && value === '_blank';
-      }
+        return node.tagName === "A" && value === "_blank";
+      },
     ],
   ]);
 
@@ -99,20 +101,20 @@ const toTrustedHtml = (function() {
    * @const
    */
   const allowedOptionalAttributes = new Map([
-    ['class', allowAttribute],
-    ['id', allowAttribute],
-    ['is', (node, value) => value === 'action-link' || value === ''],
-    ['role', (node, value) => value === 'link'],
+    ["class", allowAttribute],
+    ["id", allowAttribute],
+    ["is", (node, value) => value === "action-link" || value === ""],
+    ["role", (node, value) => value === "link"],
     [
-      'src',
+      "src",
       (node, value) => {
         // Only allow img[src] starting with edge://
-        return node.tagName === 'IMG' && value.startsWith('edge://');
-      }
+        return node.tagName === "IMG" && value.startsWith("edge://");
+      },
     ],
-    ['tabindex', allowAttribute],
-    ['aria-hidden', allowAttribute],
-    ['aria-labelledby', allowAttribute],
+    ["tabindex", allowAttribute],
+    ["aria-hidden", allowAttribute],
+    ["aria-labelledby", allowAttribute],
   ]);
 
   /**
@@ -120,15 +122,24 @@ const toTrustedHtml = (function() {
    * @type {!Set<string>}
    * @const
    */
-  const allowedTags =
-      new Set(['A', 'B', 'BR', 'DIV', 'KBD', 'P', 'PRE', 'SPAN', 'STRONG']);
+  const allowedTags = new Set([
+    "A",
+    "B",
+    "BR",
+    "DIV",
+    "KBD",
+    "P",
+    "PRE",
+    "SPAN",
+    "STRONG",
+  ]);
 
   /**
    * Allow-list of optional tag names in parseHtmlSubset.
    * @type {!Set<string>}
    * @const
    */
-  const allowedOptionalTags = new Set(['IMG', 'LI', 'UL']);
+  const allowedOptionalTags = new Set(["IMG", "LI", "UL"]);
 
   /**
    * @param {!Array<string>} optTags an Array to merge.
@@ -136,7 +147,7 @@ const toTrustedHtml = (function() {
    */
   function mergeTags(optTags) {
     const clone = new Set(allowedTags);
-    optTags.forEach(str => {
+    optTags.forEach((str) => {
       const tag = str.toUpperCase();
       if (allowedOptionalTags.has(tag)) {
         clone.add(tag);
@@ -152,7 +163,7 @@ const toTrustedHtml = (function() {
    */
   function mergeAttrs(optAttrs) {
     const clone = new Map([...allowedAttributes]);
-    optAttrs.forEach(key => {
+    optAttrs.forEach((key) => {
       if (allowedOptionalAttributes.has(key)) {
         clone.set(key, allowedOptionalAttributes.get(key));
       }
@@ -169,7 +180,7 @@ const toTrustedHtml = (function() {
 
   function assertElement(tags, node) {
     if (!tags.has(node.tagName)) {
-      throw Error(node.tagName + ' is not supported');
+      throw Error(node.tagName + " is not supported");
     }
   }
 
@@ -177,16 +188,17 @@ const toTrustedHtml = (function() {
     const n = attrNode.nodeName;
     const v = attrNode.nodeValue;
     if (!attrs.has(n) || !attrs.get(n)(node, v)) {
-      throw Error(node.tagName + '[' + n + '="' + v + '"] is not supported');
+      throw Error(node.tagName + "[" + n + '="' + v + '"] is not supported');
     }
   }
 
-  return function(s, opt_extraTags, opt_extraAttrs) {
+  return function (s, opt_extraTags, opt_extraAttrs) {
     const tags = opt_extraTags ? mergeTags(opt_extraTags) : allowedTags;
-    const attrs =
-        opt_extraAttrs ? mergeAttrs(opt_extraAttrs) : allowedAttributes;
+    const attrs = opt_extraAttrs
+      ? mergeAttrs(opt_extraAttrs)
+      : allowedAttributes;
 
-    const doc = document.implementation.createHTMLDocument('');
+    const doc = document.implementation.createHTMLDocument("");
     const r = doc.createRange();
     r.selectNode(doc.body);
 
@@ -196,7 +208,7 @@ const toTrustedHtml = (function() {
 
     // This does not execute any scripts because the document has no view.
     const df = r.createContextualFragment(s);
-    walk(df, function(node) {
+    walk(df, function (node) {
       switch (node.nodeType) {
         case Node.ELEMENT_NODE:
           assertElement(tags, node);
@@ -212,14 +224,14 @@ const toTrustedHtml = (function() {
           break;
 
         default:
-          throw Error('Node type ' + node.nodeType + ' is not supported');
+          throw Error("Node type " + node.nodeType + " is not supported");
       }
     });
     return df;
   };
 })();
 
-/* #ignore */ console.warn('crbug/1173575, non-JS module files deprecated.');
+/* #ignore */ console.warn("crbug/1173575, non-JS module files deprecated.");
 
 /**
  * Parses a very small subset of HTML. This ensures that insecure HTML /
@@ -232,11 +244,11 @@ const toTrustedHtml = (function() {
  * @throws {Error} In case of non supported markup.
  * @return {string|!TrustedHTML} a sanitized HTML.
  */
-/* #export */ const parseToSafeHtml = (function() {
-  'use strict';
+/* #export */ const parseToSafeHtml = (function () {
+  "use strict";
 
-  return function(s, opt_extraTags, opt_extraAttrs) {
-    const div = document.createElement('div');
+  return function (s, opt_extraTags, opt_extraAttrs) {
+    const div = document.createElement("div");
     div.appendChild(parseHtmlSubset(s, opt_extraTags, opt_extraAttrs));
     if (!window.trustedTypes) {
       return div.innerHTML;

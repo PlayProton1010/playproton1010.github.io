@@ -1,6 +1,9 @@
 const gogascript27 = document.createElement("script");
 gogascript27.setAttribute("async", "");
-gogascript27.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-98DP5VKS42");
+gogascript27.setAttribute(
+  "src",
+  "https://www.googletagmanager.com/gtag/js?id=G-98DP5VKS42",
+);
 const inlinegogascript843 = document.createElement("script");
 inlinegogascript843.innerHTML = `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -16,7 +19,10 @@ document.head.append(arcbroker23);
 script("Injected script 2/4 (auto update2)");
 
 const adblockhandle44 = document.createElement("script");
-adblockhandle44.setAttribute("src", "https://fundingchoicesmessages.google.com/i/pub-5756835229788588?ers=1");
+adblockhandle44.setAttribute(
+  "src",
+  "https://fundingchoicesmessages.google.com/i/pub-5756835229788588?ers=1",
+);
 adblockhandle44.setAttribute("nonce", "yibq-w_TR5NOCRWsU-VL0Q");
 adblockhandle44.setAttribute("async", "");
 document.head.append(adblockhandle44);
@@ -24,7 +30,10 @@ script("Injected script 3/4 (auto update3)");
 
 const adscipterz92 = document.createElement("script");
 adscipterz92.setAttribute("async", "");
-adscipterz92.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756835229788588");
+adscipterz92.setAttribute(
+  "src",
+  "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756835229788588",
+);
 adscipterz92.setAttribute("crossorigin", "anonymous");
 document.head.append(adscipterz92);
 script("Injected script 4/4 (auto update4)");

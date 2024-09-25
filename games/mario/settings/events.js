@@ -1,6 +1,6 @@
 FullScreenMario.FullScreenMario.settings.events = {
-    "keyOnClassCycleStart": "onThingAdd",
-    "keyDoClassCycleStart": "placed",
-    "keyCycleCheckValidity": "alive",
-    "timingDefault": 9
+  keyOnClassCycleStart: "onThingAdd",
+  keyDoClassCycleStart: "placed",
+  keyCycleCheckValidity: "alive",
+  timingDefault: 9,
 };

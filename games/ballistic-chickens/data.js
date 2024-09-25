@@ -7,134 +7,134 @@
 
 const ACHIEVEMENTS = {
   // distance
-  'd1': {
-    'icon': [0, -1],
-    'description': 'Fly 500 meters in one round',
+  d1: {
+    icon: [0, -1],
+    description: "Fly 500 meters in one round",
   },
-  'd2': {
-    'icon': [0, 0],
-    'description': 'Fly 1,000 meters in one round',
+  d2: {
+    icon: [0, 0],
+    description: "Fly 1,000 meters in one round",
   },
-  'd3': {
-    'icon': [0, 1],
-    'description': 'Fly 5,000 meters in one round',
+  d3: {
+    icon: [0, 1],
+    description: "Fly 5,000 meters in one round",
   },
-  'd4': {
-    'icon': [0, 2],
-    'description': 'Fly 10,000 meters in one round',
+  d4: {
+    icon: [0, 2],
+    description: "Fly 10,000 meters in one round",
   },
-  'd5': {
-    'icon': [0, 3],
-    'description': 'Fly 50,000 meters in one round',
+  d5: {
+    icon: [0, 3],
+    description: "Fly 50,000 meters in one round",
   },
-  'd6': {
-    'icon': [0, 4],
-    'description': 'Fly 100,000 meters in one round',
+  d6: {
+    icon: [0, 4],
+    description: "Fly 100,000 meters in one round",
   },
-  'd7': {
-    'icon': [0, 5],
-    'description': 'Fly 500,000 meters in one round',
+  d7: {
+    icon: [0, 5],
+    description: "Fly 500,000 meters in one round",
   },
-  'd8': {
-    'icon': [0, 6],
-    'description': 'Fly 1 million meters in one round',
+  d8: {
+    icon: [0, 6],
+    description: "Fly 1 million meters in one round",
   },
-  'd9': {
-    'icon': [0, 7],
-    'description': 'Fly 5 million meters in one round',
+  d9: {
+    icon: [0, 7],
+    description: "Fly 5 million meters in one round",
   },
-  'd10': {
-    'icon': [0, 8],
-    'description': 'Fly 1 billion meters in one round',
+  d10: {
+    icon: [0, 8],
+    description: "Fly 1 billion meters in one round",
   },
   // trampoline
-  't1': {
-    'icon': [1, -1],
-    'description': 'Bounce off of a trampoline',
+  t1: {
+    icon: [1, -1],
+    description: "Bounce off of a trampoline",
   },
-  't2': {
-    'icon': [1, 6],
-    'description': 'Bounce off of 10 trampolines',
+  t2: {
+    icon: [1, 6],
+    description: "Bounce off of 10 trampolines",
   },
-  't3': {
-    'icon': [1, 7],
-    'description': 'Bounce off of 100 trampolines',
+  t3: {
+    icon: [1, 7],
+    description: "Bounce off of 100 trampolines",
   },
-  't4': {
-    'icon': [1, 8],
-    'description': 'Bounce off of 1,000 trampolines',
+  t4: {
+    icon: [1, 8],
+    description: "Bounce off of 1,000 trampolines",
   },
   // upgrades
-  'u1': {
-    'icon': [2, -1],
-    'description': 'Have one of each upgrade',
+  u1: {
+    icon: [2, -1],
+    description: "Have one of each upgrade",
   },
-  'u2': {
-    'icon': [2, 0],
-    'description': 'Have five of each upgrade',
+  u2: {
+    icon: [2, 0],
+    description: "Have five of each upgrade",
   },
-  'u3': {
-    'icon': [2, 1],
-    'description': 'Have 10 of each upgrade',
+  u3: {
+    icon: [2, 1],
+    description: "Have 10 of each upgrade",
   },
-  'u4': {
-    'icon': [2, 2],
-    'description': 'Have 15 of each upgrade',
+  u4: {
+    icon: [2, 2],
+    description: "Have 15 of each upgrade",
   },
-  'u5': {
-    'icon': [2, 3],
-    'description': 'Have 20 of each upgrade',
+  u5: {
+    icon: [2, 3],
+    description: "Have 20 of each upgrade",
   },
-  'u6': {
-    'icon': [2, 4],
-    'description': 'Have 25 of each upgrade',
+  u6: {
+    icon: [2, 4],
+    description: "Have 25 of each upgrade",
   },
-  'u7': {
-    'icon': [2, 5],
-    'description': 'Have 30 of each upgrade',
+  u7: {
+    icon: [2, 5],
+    description: "Have 30 of each upgrade",
   },
-  'u8': {
-    'icon': [2, 6],
-    'description': 'Have 35 of each upgrade',
+  u8: {
+    icon: [2, 6],
+    description: "Have 35 of each upgrade",
   },
-  'u9': {
-    'icon': [2, 7],
-    'description': 'Have 40 of each upgrade',
+  u9: {
+    icon: [2, 7],
+    description: "Have 40 of each upgrade",
   },
-  'u10': {
-    'icon': [2, 8],
-    'description': 'Have 50 of each upgrade',
+  u10: {
+    icon: [2, 8],
+    description: "Have 50 of each upgrade",
   },
   // altitude
-  'a1': {
-    'icon': [3, -1],
-    'description': 'Make it to space :O',
+  a1: {
+    icon: [3, -1],
+    description: "Make it to space :O",
   },
   // velocity
-  'v1': {
-    'icon': [4, -1],
-    'description': 'Fly at the speed of sound',
+  v1: {
+    icon: [4, -1],
+    description: "Fly at the speed of sound",
   },
-  'v2': {
-    'icon': [4, 0],
-    'description': 'Fly at Mach 5',
+  v2: {
+    icon: [4, 0],
+    description: "Fly at Mach 5",
   },
-  'v3': {
-    'icon': [4, 6],
-    'description': 'Fly at Mach 10',
+  v3: {
+    icon: [4, 6],
+    description: "Fly at Mach 10",
   },
-  'v4': {
-    'icon': [4, 7],
-    'description': 'Fly at Mach 20',
+  v4: {
+    icon: [4, 7],
+    description: "Fly at Mach 20",
   },
-  'v5': {
-    'icon': [4, 8],
-    'description': 'Fly at Mach 50',
+  v5: {
+    icon: [4, 8],
+    description: "Fly at Mach 50",
   },
   // birb
-  'b1': {
-    'icon': [5, -1],
-    'description': 'Smack into an evil bird',
+  b1: {
+    icon: [5, -1],
+    description: "Smack into an evil bird",
   },
 };
 
@@ -144,43 +144,43 @@ const ACHIEVEMENTS = {
 
 const OFFERS = [
   {
-    name: 'Launch Velocity',
-    desc: 'Shove some more gunpowder into the cannon.',
+    name: "Launch Velocity",
+    desc: "Shove some more gunpowder into the cannon.",
     cost: 30,
     gain: 10,
     expo: 1.6,
   },
   {
-    name: 'Aerodynamics',
-    desc: 'Slice through the air as fast as... a chicken... through air...',
+    name: "Aerodynamics",
+    desc: "Slice through the air as fast as... a chicken... through air...",
     cost: 100,
     gain: 3,
     expo: 1.8,
   },
   {
-    name: 'Fuel Surplus',
-    desc: 'Make more room in your fuel tank that doesn\'t really exist anyway.',
+    name: "Fuel Surplus",
+    desc: "Make more room in your fuel tank that doesn't really exist anyway.",
     cost: 200,
     gain: 50,
     expo: 1.5,
   },
   {
-    name: 'Shock Absorber',
-    desc: 'Lose less speed when you smack into the ground.',
+    name: "Shock Absorber",
+    desc: "Lose less speed when you smack into the ground.",
     cost: 150,
     gain: 1,
     expo: 1.7,
   },
   {
-    name: 'Lucky Not-Ducky',
-    desc: 'Have an increased chance of trampolines appearing.',
+    name: "Lucky Not-Ducky",
+    desc: "Have an increased chance of trampolines appearing.",
     cost: 100,
     gain: 0.4,
     expo: 1.6,
   },
   {
-    name: 'Rocket Science',
-    desc: 'Get a better firework rocket to speed you up with less fuel.',
+    name: "Rocket Science",
+    desc: "Get a better firework rocket to speed you up with less fuel.",
     cost: 150,
     gain: 0.1,
     expo: 1.7,
@@ -192,7 +192,7 @@ const STAR_TYPES = [
     range: [800, 8000],
     count: 100,
     value: 0,
-    frame: 'not a star lol',
+    frame: "not a star lol",
   },
   {
     range: [3, 70],
@@ -272,7 +272,7 @@ const STAR_TYPES = [
     value: 40,
     frame: 0,
   },
-  
+
   {
     range: [15000, 20000],
     count: 160,
@@ -285,7 +285,7 @@ const STAR_TYPES = [
     value: 50,
     frame: 2,
   },
-  
+
   {
     range: [25000, 30000],
     count: 160,
@@ -369,7 +369,7 @@ const STAR_TYPES = [
   },
 
   // FANCY SPACE
-  
+
   {
     range: [300000, 400000],
     count: 1650,
@@ -415,7 +415,7 @@ const STAR_TYPES = [
     value: 500,
     frame: 9,
   },
-  {        
+  {
     range: [1000000, 2000000],
     count: 13000,
     value: 1200,

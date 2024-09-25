@@ -2,7 +2,7 @@ window.fakeStorage = {
   _data: {},
 
   setItem: function (id, val) {
-    return this._data[id] = String(val);
+    return (this._data[id] = String(val));
   },
 
   getItem: function (id) {
@@ -14,12 +14,12 @@ window.fakeStorage = {
   },
 
   clear: function () {
-    return this._data = {};
-  }
+    return (this._data = {});
+  },
 };
 
 function LocalScoreManager() {
-  this.key     = "bestScoreF";
+  this.key = "bestScoreF";
 
   var supported = this.localStorageSupported();
   this.storage = supported ? window.localStorage : window.fakeStorage;
@@ -45,4 +45,3 @@ LocalScoreManager.prototype.get = function () {
 LocalScoreManager.prototype.set = function (score) {
   this.storage.setItem(this.key, score);
 };
-

@@ -7,7 +7,13 @@
     "playersKilled": "PLAYERS KILLED",
     "playAgain": "PLAY AGAIN",
     "menu": "MENU",
-    "messages": ["Want to play a game?", "Touch your screen to control", "Bite enemy tails but don't let them bite yours!", "Brought to you by MATH STUDY!!", "Compete against other players"],
+    "messages": [
+      "Want to play a game?",
+      "Touch your screen to control",
+      "Bite enemy tails but don't let them bite yours!",
+      "Brought to you by MATH STUDY!!",
+      "Compete against other players"
+    ],
     "nosupport": "The game is not supported on your device",
     "btnPlay": "PLAY",
     "placeholderText": "Your name",
@@ -25,7 +31,12 @@
     "playersKilled": "УБИТО",
     "playAgain": "ИГРАТЬ СНОВА",
     "menu": "МЕНЮ",
-    "messages": ["Не знаете как играть?", "Коснитесь экрана для управления", "Пересекайте хвосты противников и не позволяйте им пересечь свой!", "Захватите всю карту"],
+    "messages": [
+      "Не знаете как играть?",
+      "Коснитесь экрана для управления",
+      "Пересекайте хвосты противников и не позволяйте им пересечь свой!",
+      "Захватите всю карту"
+    ],
     "nosupport": "Игра не поддерживается на вашем браузере",
     "btnPlay": "ИГРАТЬ",
     "placeholderText": "Ваше имя",
@@ -43,7 +54,12 @@
     "playersKilled": "ÖLDÜRÜLEN OYUNCULAR",
     "playAgain": "YENİDEN OYNA",
     "menu": "MENÜ",
-    "messages": ["Oyun oynamak ister misin?", "Kontrol etmek için ekranına dokun", "Düşmanlarının kuyruklarını ısır ama seninkini ısırmalarına izin verme!", "Diğer oyunculara karşı yarış"],
+    "messages": [
+      "Oyun oynamak ister misin?",
+      "Kontrol etmek için ekranına dokun",
+      "Düşmanlarının kuyruklarını ısır ama seninkini ısırmalarına izin verme!",
+      "Diğer oyunculara karşı yarış"
+    ],
     "nosupport": "Oyun cihazınızda desteklenmiyor",
     "btnPlay": "OYNA",
     "placeholderText": "Adın",
@@ -59,7 +75,12 @@
     "playersKilled": "JUGADORES ELIMINADOS",
     "playAgain": "JUEGA DE NUEVO",
     "menu": "MENÚ",
-    "messages": ["¿Quieres jugar a un juego?", "Toca la pantalla para jugar", "¡Muerde las colas de tus enemigos, pero no permitas que muerdan la tuya!", "Compite contra otros jugadores"],
+    "messages": [
+      "¿Quieres jugar a un juego?",
+      "Toca la pantalla para jugar",
+      "¡Muerde las colas de tus enemigos, pero no permitas que muerdan la tuya!",
+      "Compite contra otros jugadores"
+    ],
     "nosupport": "El juego no es compatible con tu dispositivo",
     "btnPlay": "JUGAR",
     "placeholderText": "Tu nombre",
@@ -75,7 +96,12 @@
     "playersKilled": "JOUEURS ÉLIMINÉS",
     "playAgain": "REJOUER",
     "menu": "MENU",
-    "messages": ["Envie de commencer une partie?", "Touchez votre écran pour maîtriser", "Mordez dans les traînées ennemies mais ne les laissez pas faire de même!", "Affrontez d'autres joueurs"],
+    "messages": [
+      "Envie de commencer une partie?",
+      "Touchez votre écran pour maîtriser",
+      "Mordez dans les traînées ennemies mais ne les laissez pas faire de même!",
+      "Affrontez d'autres joueurs"
+    ],
     "nosupport": "Le jeu n'est pas pris en charge sur votre appareil",
     "btnPlay": "JOUER",
     "placeholderText": "Votre nom",
@@ -91,7 +117,12 @@
     "playersKilled": "SPELERS UITGESCHAKELD",
     "playAgain": "OPNIEUW SPELEN",
     "menu": "MENU",
-    "messages": ["Wil je een spelletje spelen?", "Raak het scherm aan om te sturen", "Bijt de staart van je tegenstanders maar laat ze jou niet bijten!", "Speel tegen andere spelers"],
+    "messages": [
+      "Wil je een spelletje spelen?",
+      "Raak het scherm aan om te sturen",
+      "Bijt de staart van je tegenstanders maar laat ze jou niet bijten!",
+      "Speel tegen andere spelers"
+    ],
     "nosupport": "De game wordt niet ondersteund op uw apparaat",
     "btnPlay": "SPEEL NU",
     "placeholderText": "Je naam",
@@ -107,7 +138,12 @@
     "playersKilled": "JOGADORES ELINIMADOS",
     "playAgain": "JOGAR NOVAMENTE",
     "menu": "MENU",
-    "messages": ["Vamos jogar uma partida?", "Toque na tela para conrolar", "Morda o rabo dos oponentes, mas não deixe que eles mordam o seu!", "Compita contra outros jogadores"],
+    "messages": [
+      "Vamos jogar uma partida?",
+      "Toque na tela para conrolar",
+      "Morda o rabo dos oponentes, mas não deixe que eles mordam o seu!",
+      "Compita contra outros jogadores"
+    ],
     "nosupport": "O jogo não é suportado no seu dispositivo",
     "btnPlay": "JOGAR",
     "placeholderText": "Seu nome",
@@ -123,7 +159,12 @@
     "playersKilled": "SPIELER ELIMINIERT",
     "playAgain": "NOCH EINMAL SPIELEN",
     "menu": "MENÜ",
-    "messages": ["Willst Du ein Spiel spielen?", "Berühre den Bildschirm, um zu steuern", "Beiße in den Schwanz Deiner Gegner, lasse Dich aber nicht von ihnen beißen!", "Trete gegen andere Spieler an"],
+    "messages": [
+      "Willst Du ein Spiel spielen?",
+      "Berühre den Bildschirm, um zu steuern",
+      "Beiße in den Schwanz Deiner Gegner, lasse Dich aber nicht von ihnen beißen!",
+      "Trete gegen andere Spieler an"
+    ],
     "nosupport": "Das Spiel wird auf Ihrem Gerät nicht unterstützt",
     "btnPlay": "JETZT SPIELEN",
     "placeholderText": "Dein Name",
@@ -139,7 +180,12 @@
     "playersKilled": "GIOCATORI ELIMINATI",
     "playAgain": "GIOCA DI NUOVO",
     "menu": "MENU",
-    "messages": ["Vuoi iniziare una partita?", "Tocca lo schermo per controllare", "Mordi le code dei nemici e non lasciarli fare altrettanto!", "Gareggia contro altri giocatori"],
+    "messages": [
+      "Vuoi iniziare una partita?",
+      "Tocca lo schermo per controllare",
+      "Mordi le code dei nemici e non lasciarli fare altrettanto!",
+      "Gareggia contro altri giocatori"
+    ],
     "nosupport": "Il gioco non è supportato sul tuo dispositivo",
     "btnPlay": "GIOCA",
     "placeholderText": "Il tuo nome",

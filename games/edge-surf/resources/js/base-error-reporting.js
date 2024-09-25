@@ -10,7 +10,7 @@ function hookErrorReporting(component) {
       message: error.message,
       name: error.name,
       source_url: source,
-      stack: error.stack
+      stack: error.stack,
     };
     chrome.errorReporting.reportError(errorInfo);
   };

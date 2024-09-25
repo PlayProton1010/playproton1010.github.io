@@ -24,8 +24,8 @@ KeyboardInputManager.prototype.listen = function () {
   var self = this;
 
   function dojump(event) {
-    var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
-                    event.shiftKey;
+    var modifiers =
+      event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
 
     if (!modifiers) {
       if (event.which >= 8 && event.which < 48) event.preventDefault();

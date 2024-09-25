@@ -1,11 +1,10 @@
 if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js", {
-            scope: __uv$config.prefix,
-        });
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js", {
+      scope: __uv$config.prefix,
     });
+  });
 }
-  
 
 window.onload = function () {
   var encUrl = localStorage.getItem("Iframe");

@@ -42,7 +42,9 @@
             });
           }),
           (this.throwNotLoaded = function () {
-            console.debug("PokiSDK is not loaded yet. Not all methods are available.");
+            console.debug(
+              "PokiSDK is not loaded yet. Not all methods are available.",
+            );
           });
       }
       return (
@@ -58,17 +60,23 @@
                   t = o.fn,
                   i = o.options;
                 "function" == typeof window.PokiSDK[t]
-                  ? (null == e ? void 0 : e.resolveFn) || (null == e ? void 0 : e.rejectFn)
+                  ? (null == e ? void 0 : e.resolveFn) ||
+                    (null == e ? void 0 : e.rejectFn)
                     ? window.PokiSDK[t](i)
                         .then(function () {
-                          for (var n = [], o = 0; o < arguments.length; o++) n[o] = arguments[o];
-                          "function" == typeof e.resolveFn && e.resolveFn.apply(e, n);
+                          for (var n = [], o = 0; o < arguments.length; o++)
+                            n[o] = arguments[o];
+                          "function" == typeof e.resolveFn &&
+                            e.resolveFn.apply(e, n);
                         })
                         .catch(function () {
-                          for (var n = [], o = 0; o < arguments.length; o++) n[o] = arguments[o];
-                          "function" == typeof e.rejectFn && e.rejectFn.apply(e, n);
+                          for (var n = [], o = 0; o < arguments.length; o++)
+                            n[o] = arguments[o];
+                          "function" == typeof e.rejectFn &&
+                            e.rejectFn.apply(e, n);
                         })
-                    : void 0 !== (null == e ? void 0 : e.fn) && window.PokiSDK[t](i)
+                    : void 0 !== (null == e ? void 0 : e.fn) &&
+                      window.PokiSDK[t](i)
                   : console.error("Cannot execute " + e.fn);
               },
               n = this;
@@ -80,8 +88,22 @@
         e
       );
     })())();
-  (window.PokiSDK = { init: o.init, initWithVideoHB: o.init, customEvent: o.throwNotLoaded, destroyAd: o.throwNotLoaded, getLeaderboard: o.handleAutoResolvePromiseObj }),
-    ["disableProgrammatic", "gameLoadingStart", "gameLoadingFinished", "gameInteractive", "roundStart", "roundEnd", "muteAd"].forEach(function (e) {
+  (window.PokiSDK = {
+    init: o.init,
+    initWithVideoHB: o.init,
+    customEvent: o.throwNotLoaded,
+    destroyAd: o.throwNotLoaded,
+    getLeaderboard: o.handleAutoResolvePromiseObj,
+  }),
+    [
+      "disableProgrammatic",
+      "gameLoadingStart",
+      "gameLoadingFinished",
+      "gameInteractive",
+      "roundStart",
+      "roundEnd",
+      "muteAd",
+    ].forEach(function (e) {
       window.PokiSDK[e] = o.noArguments(e);
     }),
     [
@@ -101,7 +123,9 @@
       window.PokiSDK[e] = o.oneArgument(e);
     });
   var t,
-    i = ((t = window.pokiSDKVersion) || (t = e("ab") || "v2.234.2"), "poki-sdk-" + (n ? "kids" : "core") + "-" + t + ".js"),
+    i =
+      ((t = window.pokiSDKVersion) || (t = e("ab") || "v2.234.2"),
+      "poki-sdk-" + (n ? "kids" : "core") + "-" + t + ".js"),
     r = document.createElement("script");
   r.setAttribute("src", i),
     r.setAttribute("type", "text/javascript"),

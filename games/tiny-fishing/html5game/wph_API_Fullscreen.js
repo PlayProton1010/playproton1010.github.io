@@ -1,8 +1,9 @@
 (function () {
-  'use strict';
+  "use strict";
 
-  var isCommonjs = typeof module !== 'undefined' && module.exports;
-  var keyboardAllowed = typeof Element !== 'undefined' && 'ALLOW_KEYBOARD_INPUT' in Element;
+  var isCommonjs = typeof module !== "undefined" && module.exports;
+  var keyboardAllowed =
+    typeof Element !== "undefined" && "ALLOW_KEYBOARD_INPUT" in Element;
 
   var fn = (function () {
     var val;
@@ -10,49 +11,47 @@
 
     var fnMap = [
       [
-        'requestFullscreen',
-        'exitFullscreen',
-        'fullscreenElement',
-        'fullscreenEnabled',
-        'fullscreenchange',
-        'fullscreenerror'
+        "requestFullscreen",
+        "exitFullscreen",
+        "fullscreenElement",
+        "fullscreenEnabled",
+        "fullscreenchange",
+        "fullscreenerror",
       ],
       // new WebKit
       [
-        'webkitRequestFullscreen',
-        'webkitExitFullscreen',
-        'webkitFullscreenElement',
-        'webkitFullscreenEnabled',
-        'webkitfullscreenchange',
-        'webkitfullscreenerror'
-
+        "webkitRequestFullscreen",
+        "webkitExitFullscreen",
+        "webkitFullscreenElement",
+        "webkitFullscreenEnabled",
+        "webkitfullscreenchange",
+        "webkitfullscreenerror",
       ],
       // old WebKit (Safari 5.1)
       [
-        'webkitRequestFullScreen',
-        'webkitCancelFullScreen',
-        'webkitCurrentFullScreenElement',
-        'webkitCancelFullScreen',
-        'webkitfullscreenchange',
-        'webkitfullscreenerror'
-
+        "webkitRequestFullScreen",
+        "webkitCancelFullScreen",
+        "webkitCurrentFullScreenElement",
+        "webkitCancelFullScreen",
+        "webkitfullscreenchange",
+        "webkitfullscreenerror",
       ],
       [
-        'mozRequestFullScreen',
-        'mozCancelFullScreen',
-        'mozFullScreenElement',
-        'mozFullScreenEnabled',
-        'mozfullscreenchange',
-        'mozfullscreenerror'
+        "mozRequestFullScreen",
+        "mozCancelFullScreen",
+        "mozFullScreenElement",
+        "mozFullScreenEnabled",
+        "mozfullscreenchange",
+        "mozfullscreenerror",
       ],
       [
-        'msRequestFullscreen',
-        'msExitFullscreen',
-        'msFullscreenElement',
-        'msFullscreenEnabled',
-        'MSFullscreenChange',
-        'MSFullscreenError'
-      ]
+        "msRequestFullscreen",
+        "msExitFullscreen",
+        "msFullscreenElement",
+        "msFullscreenEnabled",
+        "MSFullscreenChange",
+        "MSFullscreenError",
+      ],
     ];
 
     var i = 0;
@@ -98,7 +97,7 @@
         this.request(elem);
       }
     },
-    raw: fn
+    raw: fn,
   };
 
   if (!fn) {
@@ -115,21 +114,21 @@
     isFullscreen: {
       get: function () {
         return Boolean(document[fn.fullscreenElement]);
-      }
+      },
     },
     element: {
       enumerable: true,
       get: function () {
         return document[fn.fullscreenElement];
-      }
+      },
     },
     enabled: {
       enumerable: true,
       get: function () {
         // Coerce to boolean in case of old WebKit
         return Boolean(document[fn.fullscreenEnabled]);
-      }
-    }
+      },
+    },
   });
 
   if (isCommonjs) {
@@ -139,18 +138,14 @@
   }
 })();
 
-function js_isFullscreenEnabled( )
-{
-	if( window.innerHeight == screen.height) 
-	{
+function js_isFullscreenEnabled() {
+  if (window.innerHeight == screen.height) {
     // browser is fullscreen
-    	return true;
-	} else
-	return false;
+    return true;
+  } else return false;
   //return screenfull.isFullscreen;
 }
 
-function js_isFullscreenAvaliable( )
-{
+function js_isFullscreenAvaliable() {
   return screenfull.enabled;
 }

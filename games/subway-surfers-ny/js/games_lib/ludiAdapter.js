@@ -1,11 +1,10 @@
-var myDataLayer = function() {
+var myDataLayer = function () {
   var arr = [];
-
 
   return arr;
 };
 
-var dataLayer = new myDataLayer;
+var dataLayer = new myDataLayer();
 var enableADS = parent.enableADS;
 var productKey = parent.productKey;
 var productTitle = parent.productTitle;
@@ -20,38 +19,38 @@ if (parent.adsCurrentState) {
   var adsCurrentState = parent.adsCurrentState;
 }
 
-var playAds = function() {
+var playAds = function () {
   //parent.playAds();
   sdk.showBanner();
-}
-var getReferrer = function() {
+};
+var getReferrer = function () {
   return parent.getReferrer();
-}
+};
 
-var show_freeFrame = function() {
+var show_freeFrame = function () {
   //return parent.playAds();
   sdk.showBanner();
-}
-var show_freeFrame_Loc = function(l) {
+};
+var show_freeFrame_Loc = function (l) {
   //return parent.playAds();
   sdk.showBanner();
-}
-var o_setDisplayRewardAds = function(v) {
+};
+var o_setDisplayRewardAds = function (v) {
   //return parent.o_setDisplayRewardAds(v);
   sdk.showBanner();
-}
-var ora_isDisplayingReward = function(v) {
+};
+var ora_isDisplayingReward = function (v) {
   //return parent.ora_isDisplayingReward(v);
   sdk.showBanner();
-}
-var ora_getPayloadAmount = function() {
+};
+var ora_getPayloadAmount = function () {
   return parent.ora_getPayloadAmount();
-}
-var isAdsComplete = function() {
+};
+var isAdsComplete = function () {
   return parent.isAdsComplete();
-}
-var myConsoleLog = function() {
+};
+var myConsoleLog = function () {
   return parent.myConsoleLog();
-}
+};
 
 var isShowAdScreen = false;

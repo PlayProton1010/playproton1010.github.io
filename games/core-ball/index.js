@@ -1,4 +1,5 @@
-"undefined" == typeof window.define && ((window.define = function () {}), (window.define.amd = 1)),
+"undefined" == typeof window.define &&
+  ((window.define = function () {}), (window.define.amd = 1)),
   "undefined" == typeof window.$AJB && (window.$AJB = {}),
   ($AJB.lib = {}),
   ($AJB.general = {}),
@@ -6,7 +7,10 @@
   ($AJB.lib.stopEvent = function () {
     "use strict";
     return function (a) {
-      a && (a.preventDefault ? (a.preventDefault(), a.stopPropagation()) : ((a.returnValue = !1), (a.cancelBubble = !0)));
+      a &&
+        (a.preventDefault
+          ? (a.preventDefault(), a.stopPropagation())
+          : ((a.returnValue = !1), (a.cancelBubble = !0)));
     };
   }),
   ($AJB.lib.Storage = function () {
@@ -76,15 +80,34 @@
               c = 30;
             h.enabled &&
               (0 === e
-                ? ((d = h.color), a[0] < b / 2 ? ((a[0] = Math.min(a[0] + c, b / 2)), (h.point = a)) : ((h.point = a), (g = !0)))
-                : 1 === e && ((d = "#000"), a[0] > b / 2 ? ((a[0] = Math.max(a[0] - c, b / 2)), (h.point = a)) : ((h.point = a), (g = !0))));
+                ? ((d = h.color),
+                  a[0] < b / 2
+                    ? ((a[0] = Math.min(a[0] + c, b / 2)), (h.point = a))
+                    : ((h.point = a), (g = !0)))
+                : 1 === e &&
+                  ((d = "#000"),
+                  a[0] > b / 2
+                    ? ((a[0] = Math.max(a[0] - c, b / 2)), (h.point = a))
+                    : ((h.point = a), (g = !0))));
           },
           render: function () {
             var e = h.point;
-            h.enabled && ((a.fillStyle = d), a.fillRect(e[0] - b / 2, e[1] - c / 2, b, c), g && ((h.enabled = !1), f && f()));
+            h.enabled &&
+              ((a.fillStyle = d),
+              a.fillRect(e[0] - b / 2, e[1] - c / 2, b, c),
+              g && ((h.enabled = !1), f && f()));
           },
           switchStage: function (d, i) {
-            0 === d ? (h.point = [-b / 2, c / 2]) : 1 === d && ((a.fillStyle = h.color), a.fillRect(0, 0, b, c), (h.point = [b + b / 2, c / 2])), (h.enabled = !0), (g = !1), (e = d), (f = i);
+            0 === d
+              ? (h.point = [-b / 2, c / 2])
+              : 1 === d &&
+                ((a.fillStyle = h.color),
+                a.fillRect(0, 0, b, c),
+                (h.point = [b + b / 2, c / 2])),
+              (h.enabled = !0),
+              (g = !1),
+              (e = d),
+              (f = i);
           },
         };
       return h;
@@ -95,7 +118,11 @@
     var a = $AJB.lib.util(),
       b = { click: "touchstart", mousedown: "touchstart", mouseup: "touchend" };
     return function (c, d, e, f) {
-      c.addEventListener ? c.addEventListener(a.isMobile ? b[d] || d : d, e, f) : c.attachEvent ? c.attachEvent("on" + d, e) : (c["on" + d] = e);
+      c.addEventListener
+        ? c.addEventListener(a.isMobile ? b[d] || d : d, e, f)
+        : c.attachEvent
+          ? c.attachEvent("on" + d, e)
+          : (c["on" + d] = e);
     };
   }),
   ($AJB.general.Levels = function () {
@@ -195,8 +222,13 @@
         12: [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330],
         13: [0, 28, 56, 84, 111, 139, 167, 194, 222, 250, 277, 305, 333],
         14: [0, 26, 52, 78, 103, 129, 155, 180, 206, 232, 258, 283, 309, 335],
-        15: [0, 24, 48, 72, 96, 120, 144, 168, 192, 216, 240, 264, 288, 312, 336],
-        16: [0, 23, 45, 68, 90, 113, 135, 158, 180, 203, 225, 248, 270, 293, 315, 338],
+        15: [
+          0, 24, 48, 72, 96, 120, 144, 168, 192, 216, 240, 264, 288, 312, 336,
+        ],
+        16: [
+          0, 23, 45, 68, 90, 113, 135, 158, 180, 203, 225, 248, 270, 293, 315,
+          338,
+        ],
       },
       l = {
         1: ["4", 8, "A1"],
@@ -271,7 +303,13 @@
           var e = b.childs(),
             f = e.length,
             g = Math.ceil(2 * c.rad());
-          for (d = d || 1; f--; ) if (c !== e[f].ball && a.getPointDistance(c.pos(), e[f].ball.pos()) <= g + Math.ceil(2 * d)) return !0;
+          for (d = d || 1; f--; )
+            if (
+              c !== e[f].ball &&
+              a.getPointDistance(c.pos(), e[f].ball.pos()) <=
+                g + Math.ceil(2 * d)
+            )
+              return !0;
           return !1;
         },
       };
@@ -283,7 +321,9 @@
       simple: function (b, c, d, e) {
         var f = (c - b) / e,
           g = +new Date();
-        return e > g - d ? ((a.isEnd = !1), b + (g - d) * f) : ((a.isEnd = !0), c);
+        return e > g - d
+          ? ((a.isEnd = !1), b + (g - d) * f)
+          : ((a.isEnd = !0), c);
       },
       isEnd: !0,
     };
@@ -297,7 +337,10 @@
           d,
           e = k(a),
           j = e.length;
-        for (b = 0; j > b; b++) (d = c(h, null, e[b], null, i)), d.pos(f, g + 3 * d.rad() * b), m.push(d);
+        for (b = 0; j > b; b++)
+          (d = c(h, null, e[b], null, i)),
+            d.pos(f, g + 3 * d.rad() * b),
+            m.push(d);
       }
       function k(a) {
         for (var b = a, c = []; b--; ) c.push(b + 1);
@@ -330,7 +373,10 @@
               h = n.length,
               i = m.length;
             if (h) {
-              for (b = n[0].rad(), a = g - 3 * b; h--; ) n[h].pos(f, d.simple(n[h].sv, a, n[h].st, 50)), (c = n[n.length - 1].pos().y), n[h].pos().y === a && (o.fire(e, n[h]), n.splice(h, 1));
+              for (b = n[0].rad(), a = g - 3 * b; h--; )
+                n[h].pos(f, d.simple(n[h].sv, a, n[h].st, 50)),
+                  (c = n[n.length - 1].pos().y),
+                  n[h].pos().y === a && (o.fire(e, n[h]), n.splice(h, 1));
               for (; i--; ) m[i].pos(f, c + 3 * b * (i + 1));
             }
           },
@@ -375,7 +421,11 @@
         (e = (e || 15) * f),
         (h = {
           pos: function (a, b) {
-            return "undefined" != typeof a && (i = a), "undefined" != typeof b && (j = b), { x: i, y: j };
+            return (
+              "undefined" != typeof a && (i = a),
+              "undefined" != typeof b && (j = b),
+              { x: i, y: j }
+            );
           },
           scale: function (a) {
             return "undefined" != typeof a && (f = a), f;
@@ -384,7 +434,8 @@
             return "undefined" != typeof a && (c = a), c;
           },
           render: function (e) {
-            b.drawCircle(a, i, j, c, "#ffffff"), "undefined" != typeof d ? g(d) : "undefined" != typeof e && g(e);
+            b.drawCircle(a, i, j, c, "#ffffff"),
+              "undefined" != typeof d ? g(d) : "undefined" != typeof e && g(e);
           },
           destroy: function () {
             h = null;
@@ -399,21 +450,42 @@
     "use strict";
     return {
       drawCircle: function (a, b, c, d, e) {
-        a.beginPath(), a.arc(b, c, d, 0, 2 * Math.PI, !1), (a.fillStyle = e || "red"), a.fill();
+        a.beginPath(),
+          a.arc(b, c, d, 0, 2 * Math.PI, !1),
+          (a.fillStyle = e || "red"),
+          a.fill();
       },
       drawLine: function (a, b, c, d, e, f, g) {
-        (a.strokeStyle = f || "red"), (a.lineWidth = g || 1), a.beginPath(), a.moveTo(b, c), a.lineTo(d, e), a.stroke();
+        (a.strokeStyle = f || "red"),
+          (a.lineWidth = g || 1),
+          a.beginPath(),
+          a.moveTo(b, c),
+          a.lineTo(d, e),
+          a.stroke();
       },
       drawText: function (a, b, c, d, e, f) {
-        (a.font = e + "px Verdana"), (a.fillStyle = f || "red"), a.fillText(d, b, c);
+        (a.font = e + "px Verdana"),
+          (a.fillStyle = f || "red"),
+          a.fillText(d, b, c);
       },
       getTextWidth: function (a, b, c, d, e, f) {
-        return (a.font = e + "px Verdana"), (a.fillStyle = f || "red"), a.measureText(d).width;
+        return (
+          (a.font = e + "px Verdana"),
+          (a.fillStyle = f || "red"),
+          a.measureText(d).width
+        );
       },
       getPointDistance: function (a, b) {
-        return Math.floor(Math.sqrt(Math.floor(Math.pow(a.x - b.x, 2)) + Math.floor(Math.pow(a.y - b.y, 2))));
+        return Math.floor(
+          Math.sqrt(
+            Math.floor(Math.pow(a.x - b.x, 2)) +
+              Math.floor(Math.pow(a.y - b.y, 2)),
+          ),
+        );
       },
-      isMobile: /(mobile|iphone|ipod|ipad|ios|android|windows phone)/i.test(navigator.userAgent),
+      isMobile: /(mobile|iphone|ipod|ipad|ios|android|windows phone)/i.test(
+        navigator.userAgent,
+      ),
       isAndroid: /android/i.test(navigator.userAgent),
       isWeixin: /MicroMessenger/i.test(navigator.userAgent),
     };
@@ -423,7 +495,15 @@
     function a(a, d, e, f, g) {
       function h() {
         for (var a, b, c, d, e = l.length; e--; )
-          (a = 3 * Math.cos(((l[e].angle + j.angle()) * Math.PI) / 180) * m * g + n), (b = 3 * Math.sin(((l[e].angle + j.angle()) * Math.PI) / 180) * m * g + o), (c = a / Math.abs(a)), (d = b / Math.abs(b)), l[e].ball.pos(a, b);
+          (a =
+            3 * Math.cos(((l[e].angle + j.angle()) * Math.PI) / 180) * m * g +
+            n),
+            (b =
+              3 * Math.sin(((l[e].angle + j.angle()) * Math.PI) / 180) * m * g +
+              o),
+            (c = a / Math.abs(a)),
+            (d = b / Math.abs(b)),
+            l[e].ball.pos(a, b);
       }
       var i,
         j,
@@ -460,7 +540,17 @@
               e = l.length,
               f = a.width,
               h = a.height;
-            for (d.clearRect(0, 0, f, h), c = 0; e > c; c++) b.drawLine(d, n, o, l[c].ball.pos().x, l[c].ball.pos().y, "#ffffff", 1.5 * g), l[c].ball.render();
+            for (d.clearRect(0, 0, f, h), c = 0; e > c; c++)
+              b.drawLine(
+                d,
+                n,
+                o,
+                l[c].ball.pos().x,
+                l[c].ball.pos().y,
+                "#ffffff",
+                1.5 * g,
+              ),
+                l[c].ball.render();
             i.render();
           },
           destroy: function () {
@@ -491,11 +581,20 @@
           remove: function (a, d) {
             var e,
               f = c[a];
-            if (((a = a.toLowerCase()), "function" === b(d) && f && f.length)) for (e = f.length - 1; e >= 0; e--) f[e] === d && f.splice(e, 1);
+            if (((a = a.toLowerCase()), "function" === b(d) && f && f.length))
+              for (e = f.length - 1; e >= 0; e--) f[e] === d && f.splice(e, 1);
           },
           fire: function (b) {
             var d, e, f, g;
-            if (((b = b.toLowerCase()), (d = c[b]), d && d.length)) for (e = Array.prototype.slice.call(arguments, 1), g = d.length, f = 0; g > f; f++) d[f].apply(a, e);
+            if (((b = b.toLowerCase()), (d = c[b]), d && d.length))
+              for (
+                e = Array.prototype.slice.call(arguments, 1),
+                  g = d.length,
+                  f = 0;
+                g > f;
+                f++
+              )
+                d[f].apply(a, e);
           },
           destroy: function () {
             var a,
@@ -512,11 +611,13 @@
       function n(a) {
         var g = a.childs,
           h = g.length;
-        for (y = a.round(), w && w.destroy(), w = c(b, l, B, 50, m); h--; ) w.addChild(g[h], d(l, null, "", null, m));
+        for (y = a.round(), w && w.destroy(), w = c(b, l, B, 50, m); h--; )
+          w.addChild(g[h], d(l, null, "", null, m));
         x && x.destroy(),
           (x = e(a.queueCount, b.width / 2, w.pos().y + 4 * w.rad(), l, m)),
           x.on("popup", function (a) {
-            w.addChild(90 - w.angle(), a), f.check(w, a, m) ? ((z = a), s()) : !x.ballList.length && r();
+            w.addChild(90 - w.angle(), a),
+              f.check(w, a, m) ? ((z = a), s()) : !x.ballList.length && r();
           });
       }
       function o() {
@@ -530,7 +631,12 @@
           f = w.childs(),
           g = f.length,
           h = 25;
-        for (a.style.backgroundColor = u.bgColor; g--; ) (b = f[g].angle + w.angle()), (c = Math.cos((b * Math.PI) / 180) * h), (d = Math.sin((b * Math.PI) / 180) * h), (e = f[g].ball.pos()), f[g].ball.pos(e.x + c, e.y + d);
+        for (a.style.backgroundColor = u.bgColor; g--; )
+          (b = f[g].angle + w.angle()),
+            (c = Math.cos((b * Math.PI) / 180) * h),
+            (d = Math.sin((b * Math.PI) / 180) * h),
+            (e = f[g].ball.pos()),
+            f[g].ball.pos(e.x + c, e.y + d);
       }
       function q(a) {
         var b,
@@ -541,10 +647,16 @@
         for (w.update(), b = 1; d >= b; b++) a > f * b && z.rad(c[b - 1] * m);
       }
       function r() {
-        "pass" !== A && ((a.style.backgroundColor = "#1CB01A"), (A = "pass"), (v = +new Date()));
+        "pass" !== A &&
+          ((a.style.backgroundColor = "#1CB01A"),
+          (A = "pass"),
+          (v = +new Date()));
       }
       function s() {
-        "fail" !== l && ((a.style.backgroundColor = "#B8111C"), (A = "fail"), (v = +new Date()));
+        "fail" !== l &&
+          ((a.style.backgroundColor = "#B8111C"),
+          (A = "fail"),
+          (v = +new Date()));
       }
       function t() {
         var a = "to be continued...",
@@ -563,14 +675,28 @@
         enabled: !1,
         run: function (b) {
           var c = g[b];
-          (B = b), c ? ((u.enabled = !0), n(c), (a.style.backgroundColor = "#000"), (A = "run")) : t();
+          (B = b),
+            c
+              ? ((u.enabled = !0),
+                n(c),
+                (a.style.backgroundColor = "#000"),
+                (A = "run"))
+              : t();
         },
         shot: function () {
           x && x.ballList.length && x.popup();
         },
         update: function () {
           var a;
-          u.enabled && ("run" === A ? o() : "pass" === A ? (p(), +new Date() - v > 1e3 && ((A = ""), k.fire(i))) : "fail" === A && ((a = +new Date() - v), q(a), a > 1e3 && ((A = ""), k.fire(j))));
+          u.enabled &&
+            ("run" === A
+              ? o()
+              : "pass" === A
+                ? (p(), +new Date() - v > 1e3 && ((A = ""), k.fire(i)))
+                : "fail" === A &&
+                  ((a = +new Date() - v),
+                  q(a),
+                  a > 1e3 && ((A = ""), k.fire(j))));
         },
         render: function () {
           u.enabled && (w.render(), x.render());
@@ -600,19 +726,31 @@
     function a() {
       var a = document.body.scrollWidth || document.documentElement.scrollWidth,
         b = document.body.scrollHeight || document.documentElement.scrollHeight;
-      (r.width = a), (r.height = b), (i = l(x, a, b)), (s.style.backgroundColor = i.color), (s.style.width = a + "px"), (s.style.height = b + "px"), (j = b / 560);
+      (r.width = a),
+        (r.height = b),
+        (i = l(x, a, b)),
+        (s.style.backgroundColor = i.color),
+        (s.style.width = a + "px"),
+        (s.style.height = b + "px"),
+        (j = b / 560);
     }
     function b() {}
     function c() {
       n(u, "mousedown", function () {});
     }
     function d(a) {
-      (D = +a), o.setValue(z, D), (document.title = A.replace(/\#\{level\}/, D)), (GlobalLevel = D), C.level(D), !p.isWeixin && p.isMobile && b();
+      (D = +a),
+        o.setValue(z, D),
+        (document.title = A.replace(/\#\{level\}/, D)),
+        (GlobalLevel = D),
+        C.level(D),
+        !p.isWeixin && p.isMobile && b();
     }
     function e() {
       n(document.body, "mousedown", function (a) {
         var b;
-        if (a && a.changedTouches) for (b = a.changedTouches.length; b--; ) h.shot();
+        if (a && a.changedTouches)
+          for (b = a.changedTouches.length; b--; ) h.shot();
         else h.shot();
         "1" != a.target.getAttribute("data-capture") && q(a);
       }),
@@ -647,7 +785,12 @@
         });
     }
     function f() {
-      window.clearTimeout(F), h.update(), h.render(), i.update(), i.render(), (F = window.setTimeout(f, 1e3 / y));
+      window.clearTimeout(F),
+        h.update(),
+        h.render(),
+        i.update(),
+        i.render(),
+        (F = window.setTimeout(f, 1e3 / y));
     }
     function g() {
       a(), (h = k(document.body, r, x, j)), e(), c(), C.level(D), C.show(), f();
