@@ -315,14 +315,53 @@
   "src": "./games/flappy-2048/index.html",
   "alert": ""
 },
-
-  
-  {
+ 
+{
   "title": "Snowbattle",
   "logo": "./assets/img/IMG_2509.jpeg",
   "src": "./games/snowbattle/index.html",
   "alert": ""
+},
+
+ 
+{
+  "title": "Big Red Button",
+  "logo": "./games/bigredbutton/bigredbutton.png",
+  "src": "./games/bigredbutton/index.html",
+  "alert": ""
+},
+
+ 
+{
+  "title": "Fruit Ninja",
+  "logo": "./games/fruitninja/FruitNinjaTeaser.jpg",
+  "src": "./games/fruitninja/index.html",
+  "alert": ""
+},
+
+ 
+{
+  "title": "Hexempire",
+  "logo": "./games/hexempire/hexempire.jpg",
+  "src": "./games/hexempire/index.html",
+  "alert": ""
+},
+
+ 
+{
+  "title": "Learn To Fly idle",
+  "logo": "./games/ltf-idle/thumbnail.jpg",
+  "src": "./games/ltf-idle/index.html",
+  "alert": ""
+},
+
+ 
+{
+  "title": "Mario",
+  "logo": "./assets/img/smb.jpeg",
+  "src": "./games/mario/index.html",
+  "alert": ""
 }
-  
+
   
 ]
