@@ -350,5 +350,13 @@
     "logo": "./assets/img/smb.jpeg",
     "src": "./games/mario/index.html",
     "alert": ""
+  },
+
+  {
+    "title": "Basketball Bros",
+    "logo": "./games/basketbros-io/thumb.jpg",
+    "src": "./games/basketbros-io/index.html",
+    "alert": ""
   }
+  
 ]
