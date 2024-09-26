@@ -4,7 +4,22 @@ body {
   background-image: url("/assets/img/Designer.png");
   position: relative;
 }
+.banner {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 2px -2px gray;
+}
 
+p {
+  margin: 0;
+}
 .input-game {
   display: flex;
   align-items: center;
