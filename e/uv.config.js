@@ -1,6 +1,6 @@
 self.__uv$config = {
   prefix: "/p/",
-  bare: "playproton.edura.tk/b/",
+  bare: "https://playproton.edura.tk/b/",
   encodeUrl: Ultraviolet.codec.xor.encode,
   decodeUrl: Ultraviolet.codec.xor.decode,
   handler: "/e/uv.handler.js",
