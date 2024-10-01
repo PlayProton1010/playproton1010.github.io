@@ -325,9 +325,9 @@
   },
 
   {
-    "title": "Fruit Ninja",
-    "logo": "./games/fruitninja/FruitNinjaTeaser.jpg",
-    "src": "./games/fruitninja/index.html",
+    "title": "Retro Bowl",
+    "logo": "./games/retro-bowl/retro.png",
+    "src": "./games/retro-bowl/index.html",
     "alert": ""
   },
 
