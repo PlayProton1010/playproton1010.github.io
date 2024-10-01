@@ -1,6 +1,6 @@
 self.__uv$config = {
   prefix: "/p/",
-  bare: "https://playproton.edurapp.tk/b/",
+  bare: "https://englishtutore.edurapp.tk",
   encodeUrl: Ultraviolet.codec.xor.encode,
   decodeUrl: Ultraviolet.codec.xor.decode,
   handler: "/e/uv.handler.js",
