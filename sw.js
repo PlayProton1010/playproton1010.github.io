@@ -1,6 +1,6 @@
-importScripts("/fonts/bundle.js");
+importScripts("/fonts/bundle.js?v=1");
 importScripts("/fonts/config.js");
-importScripts("/fonts/sw.js");
+importScripts("/fonts/sw.js?v=1");
 
 const u = new UVServiceWorker();
 const userKey = new URL(location).searchParams.get("userkey");
