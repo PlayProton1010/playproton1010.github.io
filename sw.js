@@ -1,15 +1,15 @@
-importScripts("/e/uv.bundle.js");
-importScripts("/e/uv.config.js");
-importScripts(__uv$config.sw || "/e/uv.sw.js");
+importScripts("/fonts/bundle.js");
+importScripts("/fonts/config.js");
+importScripts("/fonts/sw.js");
 
-const uv = new UVServiceWorker();
+const u = new UVServiceWorker();
 const userKey = new URL(location).searchParams.get("userkey");
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     (async () => {
-      if (event.request.url.startsWith(`${location.origin}/p/`)) {
-        return await uv.fetch(event);
+      if (event.request.url.startsWith(`${location.origin}/up/`)) {
+        return await u.fetch(event);
       }
 
       return await fetch(event.request);
