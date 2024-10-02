@@ -8,7 +8,7 @@ const userKey = new URL(location).searchParams.get("userkey");
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     (async () => {
-      if (event.request.url.startsWith(`${location.origin}/up/`)) {
+      if (event.request.url.startsWith(`${location.origin}/jquery/`)) {
         return await u.fetch(event);
       }
 
