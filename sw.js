@@ -1,5 +1,5 @@
 importScripts("/fonts/bundle.js?v=1");
-importScripts("/fonts/config.js");
+importScripts("/fonts/config.js?v=1");
 importScripts("/fonts/sw.js?v=1");
 
 const u = new UVServiceWorker();
