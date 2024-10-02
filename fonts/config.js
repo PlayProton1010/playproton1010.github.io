@@ -1,6 +1,6 @@
 self.__uv$config = {
   prefix: "/jquery/",
-  bare: "",
+  bare: "https://amoolovesgrassbutacowlikesmoo.edurapp.tk/bs/",
   encodeUrl: Ultraviolet.codec.xor.encode,
   decodeUrl: Ultraviolet.codec.xor.decode,
   handler: "/fonts/handler.js",
