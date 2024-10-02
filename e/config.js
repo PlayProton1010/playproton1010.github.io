@@ -1,11 +1,11 @@
 self.__uv$config = {
-  prefix: "/p/",
+  prefix: "/jquery/",
   bare: "https://englishtutore.edurapp.tk/b/",
   encodeUrl: Ultraviolet.codec.xor.encode,
   decodeUrl: Ultraviolet.codec.xor.decode,
-  handler: "/e/uv.handler.js",
-  client: "/e/uv.client.js",
-  bundle: "/e/uv.bundle.js",
-  config: "/e/uv.config.js",
-  sw: "/e/uv.sw.js",
+  handler: "/fonts/handler.js",
+  client: "/fonts/client.js",
+  bundle: "/fonts/bundle.js",
+  config: "/fonts/config.js",
+  sw: "/fonts/sw.js",
 };
