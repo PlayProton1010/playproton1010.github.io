@@ -69,7 +69,7 @@ imageContainer.addEventListener("click", (event) => {
       const url = image.link || image.src;
       localStorage.setItem(
         "Iframe",
-        __uv$config.prefix + __uv$config.encodeUrl(url),
+        "jquery" + __uv$config.encodeUrl(url),
       );
       window.location.href = image.link ? "go.html" : url;
     } else {
