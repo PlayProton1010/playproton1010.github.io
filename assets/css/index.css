@@ -2,8 +2,8 @@ body {
   margin: 0;
   height: 100vh;
   background-image: url("/assets/img/Designer.png");
-  background-size: cover; /* Ensure the background image covers the viewport */
-  background-position: center; /* Center the background image */
+  background-size: cover; 
+  background-position: center;
   position: relative;
 }
 
@@ -49,7 +49,7 @@ body {
 #image-container a {
   flex: 0 0 auto;
   margin: 0 25px 40px 0;
-  border: 8px solid white;
+  border: 6px solid white;
 }
 
 .nav {
