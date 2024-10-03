@@ -24,8 +24,8 @@ fetch("./assets/json/g.json")
       const img = document.createElement("img");
       img.src = image.logo;
       img.alt = image.title || "ERROR";
-      img.width = 150;
-      img.height = 150;
+      img.width = 136;
+      img.height = 136;
       img.className = "classy";
 
       imgContainer.appendChild(img);
@@ -45,6 +45,7 @@ function debounce(func, delay) {
     timeout = setTimeout(() => func.apply(this, args), delay);
   };
 }
+
 const filterImages = debounce(() => {
   const searchTerm = searchBox.value.toLowerCase();
 
@@ -58,6 +59,7 @@ const filterImages = debounce(() => {
 }, 300);
 
 searchBox.addEventListener("keyup", filterImages);
+
 imageContainer.addEventListener("click", (event) => {
   const clickedLink = event.target.closest("a");
   if (clickedLink) {
@@ -77,6 +79,8 @@ imageContainer.addEventListener("click", (event) => {
     }
   }
 });
+
 function updateGridLayout() {
-  imageContainer.style.gridTemplateColumns = `repeat(auto-fill, minmax(150px, 1fr))`;
+  imageContainer.style.gridTemplateColumns = `repeat(auto-fill, 150px)`;
+  imageContainer.style.gridAutoRows = "150px"; 
 }
