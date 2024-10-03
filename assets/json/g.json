@@ -364,6 +364,14 @@
     "logo": "./games/breaking-the-bank/IMG_2547.png",
     "src": "./games/breaking-the-bank/index.html",
     "alert": ""
+  },
+
+    
+  {
+    "title": "Eurocup",
+    "logo": "./games/EuroCup/index.html",
+    "src": "./games/EuroCup/android-icon-192x192.png",
+    "alert": ""
   }
   
 ]
