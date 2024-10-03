@@ -9,16 +9,23 @@
 <body>
     <div class="container">
         <h1>Cheat Center V2</h1>
-        <a id="blooketHacksBtn" href="javascript:(function() { alert('Blooket Hacks Activated!'); })();">Blooket Hacks</a>
 
-        <video id="how2add" controls style="margin-top: 20px; max-width: 100%; height: auto;">
-            <source src="" type="video/mp4">
+        <!-- Hack Buttons -->
+        <div class="hack-buttons">
+            <a id="blooketHacksBtn" href="javascript:(function() { alert('Blooket Hacks Activated!'); })();">Blooket Hacks</a>
+            <a id="quizletHacksBtn" href="javascript:(function() { alert('Quizlet Hacks Activated!'); })();">Quizlet Hacks</a>
+            <a id="kahootHacksBtn" href="javascript:(function() { alert('Kahoot Hacks Activated!'); })();">Kahoot Hacks</a>
+        </div>
+
+        <!-- How To Section -->
+        <h1>How to</h1>
+        <video id="introVideo" controls style="margin-top: 20px; max-width: 100%; height: auto;">
+            <source src="path/to/your/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-      
     </div>
 
-
+    <script src="script.js"></script>
 </body>
 </html>
 
@@ -37,6 +44,7 @@ body {
 .container {
     text-align: center;
     color: white;
+    width: 80%;
 }
 
 h1 {
@@ -44,7 +52,14 @@ h1 {
     margin-bottom: 20px;
 }
 
-#blooketHacksBtn {
+.hack-buttons {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.hack-buttons a {
     padding: 10px 20px;
     font-size: 1.5rem;
     background-color: rgba(0, 0, 0, 0.7);
@@ -55,7 +70,19 @@ h1 {
     transition: background-color 0.3s;
 }
 
-#blooketHacksBtn:hover {
+.hack-buttons a:hover {
     background-color: rgba(0, 0, 0, 0.9);
 }
+
+#introVideo {
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+}
+
+#blooketHacksBtn, #quizletHacksBtn, #kahootHacksBtn {
+    flex: 1;
+}
+
 </style>
