@@ -369,8 +369,8 @@
     
   {
     "title": "Eurocup",
-    "logo": "./games/EuroCup/index.html",
-    "src": "./games/EuroCup/android-icon-192x192.png",
+    "logo": "./games/EuroCup/android-icon-192x192.png",
+    "src": "./games/EuroCup/index.html",
     "alert": ""
   }
   
