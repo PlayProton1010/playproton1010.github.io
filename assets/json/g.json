@@ -357,6 +357,13 @@
     "logo": "./games/basketbros-io/thumb.jpg",
     "src": "./games/basketbros-io/index.html",
     "alert": ""
+  },
+  
+  {
+    "title": "Breaking the bank, henry stickman",
+    "logo": "./games/breaking-the-bank/IMG_2547.png",
+    "src": "./games/breaking-the-bank/index.html",
+    "alert": ""
   }
   
 ]
