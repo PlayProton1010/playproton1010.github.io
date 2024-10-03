@@ -22,11 +22,12 @@ fetch("./assets/json/g.json")
       imgContainer.className = "image-container";
 
       const img = document.createElement("img");
-      img.src = image.logo;
+      img.src = image.logo; // Set the source for lazy loading below
       img.alt = image.title || "ERROR";
       img.width = 130;
       img.height = 130;
       img.className = "classy";
+      img.loading = "lazy"; // Lazy load image
 
       imgContainer.appendChild(img);
       imageElement.appendChild(imgContainer);
@@ -69,10 +70,7 @@ imageContainer.addEventListener("click", (event) => {
 
     if (!image.alert) {
       const url = image.link || image.src;
-      localStorage.setItem(
-        "Iframe",
-        __uv$config.prefix + __uv$config.encodeUrl(url),
-      );
+      localStorage.setItem("Iframe", __uv$config.prefix + __uv$config.encodeUrl(url));
       window.location.href = image.link ? "go.html" : url;
     } else {
       alert(image.alert);
