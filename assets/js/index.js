@@ -25,7 +25,7 @@ fetch("./assets/json/g.json")
       img.src = image.logo;
       img.alt = image.title || "ERROR";
       img.width = 130;
-      img.height = 13;
+      img.height = 130;
       img.className = "classy";
 
       imgContainer.appendChild(img);
