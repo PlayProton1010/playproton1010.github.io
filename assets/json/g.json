@@ -372,6 +372,22 @@
     "logo": "./games/EuroCup/android-icon-192x192.png",
     "src": "./games/EuroCup/index.html",
     "alert": ""
+  },
+
+     
+  {
+    "title": "Geodash world",
+    "logo": "./games/geo-Dash-World/IMG_0856.png",
+    "src": "./games/geo-Dash-World/index.html",
+    "alert": ""
+  },
+
+      
+  {
+    "title": "Geodash Subzero",
+    "logo": "./games/Geo-Dash-Subzero/IMG_0858.png",
+    "src": "./games/Geo-Dash-Subzero/index.html",
+    "alert": ""
   }
   
 ]
