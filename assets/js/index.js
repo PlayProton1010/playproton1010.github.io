@@ -24,8 +24,8 @@ fetch("./assets/json/g.json")
       const img = document.createElement("img");
       img.src = image.logo;
       img.alt = image.title || "ERROR";
-      img.width = 136;
-      img.height = 136;
+      img.width = 130;
+      img.height = 13;
       img.className = "classy";
 
       imgContainer.appendChild(img);
@@ -81,6 +81,6 @@ imageContainer.addEventListener("click", (event) => {
 });
 
 function updateGridLayout() {
-  imageContainer.style.gridTemplateColumns = `repeat(auto-fill, 150px)`;
-  imageContainer.style.gridAutoRows = "150px"; 
+  imageContainer.style.gridTemplateColumns = `repeat(auto-fill, 130px)`;
+  imageContainer.style.gridAutoRows = "130px"; 
 }
