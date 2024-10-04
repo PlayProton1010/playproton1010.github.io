@@ -388,13 +388,6 @@
     "logo": "./games/Geo-Dash-Subzero/IMG_0858.png",
     "src": "./games/Geo-Dash-Subzero/index.html",
     "alert": ""
-  },
-
-    {
-    "title": "Pixel Gun",
-    "logo": "/assets/img/IMG_2551.jpeg"
-    "link": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/pixel-shooter/ps.xml&container=ig",
-    "alert": ""
   }
   
 ]
