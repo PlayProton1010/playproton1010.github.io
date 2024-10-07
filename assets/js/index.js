@@ -22,12 +22,12 @@ fetch("./assets/json/g.json")
       imgContainer.className = "image-container";
 
       const img = document.createElement("img");
-      img.src = image.logo; // Set the source for lazy loading below
+      img.src = image.logo;
       img.alt = image.title || "ERROR";
       img.width = 130;
       img.height = 130;
       img.className = "classy";
-      img.loading = "lazy"; // Lazy load image
+      img.loading = "lazy";
 
       imgContainer.appendChild(img);
       imageElement.appendChild(imgContainer);
@@ -80,5 +80,5 @@ imageContainer.addEventListener("click", (event) => {
 
 function updateGridLayout() {
   imageContainer.style.gridTemplateColumns = `repeat(auto-fill, 130px)`;
-  imageContainer.style.gridAutoRows = "130px"; 
+  imageContainer.style.gridAutoRows = "130px";
 }
