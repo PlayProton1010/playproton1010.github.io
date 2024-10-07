@@ -1,6 +1,6 @@
 self.__uv$config = {
   prefix: "/jquery/",
-  bare: "https://awesomelearningcenter.space.edurapp.tk/contacts/",
+  bare: "https://ffddd-s2a5q3gz.b4a.run/contacts/",
   encodeUrl: Ultraviolet.codec.xor.encode,
   decodeUrl: Ultraviolet.codec.xor.decode,
   handler: "./fonts/handler.js",
