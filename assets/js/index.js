@@ -8,54 +8,64 @@ const imageContainer = document.getElementById("image-container");
 const searchBox = document.getElementById("search-box");
 let imagesData = [];
 
-fetch("./assets/json/g.json")
-  .then((response) => response.json())
-  .then((data) => {
-    imagesData = data;
-    const fragment = document.createDocumentFragment();
+async function loadImages() {
+  const cachedData = localStorage.getItem("imagesData");
+  if (cachedData) {
+    imagesData = JSON.parse(cachedData);
+    renderImages();
+  } else {
+    try {
+      const response = await fetch("./assets/json/g.json");
+      imagesData = await response.json();
+      localStorage.setItem("imagesData", JSON.stringify(imagesData));
+      renderImages();
+    } catch (error) {
+      console.error("Error fetching JSON data:", error);
+    }
+  }
+}
 
-    data.forEach((image) => {
-      const imageElement = document.createElement("a");
-      imageElement.href = image.src;
+function renderImages() {
+  const fragment = document.createDocumentFragment();
 
-      const imgContainer = document.createElement("div");
-      imgContainer.className = "image-container";
+  imagesData.forEach((image) => {
+    const imageElement = document.createElement("a");
+    imageElement.href = image.src;
 
-      const img = document.createElement("img");
-      img.src = image.logo;
-      img.alt = image.title || "ERROR";
-      img.width = 130;
-      img.height = 130;
-      img.className = "classy";
-      img.loading = "lazy";
+    const imgContainer = document.createElement("div");
+    imgContainer.className = "image-container";
 
-      imgContainer.appendChild(img);
-      imageElement.appendChild(imgContainer);
-      fragment.appendChild(imageElement);
-    });
+    const img = document.createElement("img");
+    img.src = image.logo;
+    img.alt = image.title || "ERROR";
+    img.width = 130;
+    img.height = 130;
+    img.className = "classy";
+    img.loading = "lazy";
 
-    imageContainer.appendChild(fragment);
-    updateGridLayout();
-  })
-  .catch((error) => console.error("Error fetching JSON data:", error));
+    imgContainer.appendChild(img);
+    imageElement.appendChild(imgContainer);
+    fragment.appendChild(imageElement);
+  });
 
-function debounce(func, delay) {
+  imageContainer.appendChild(fragment);
+  updateGridLayout();
+}
+
+const debounce = (func, delay) => {
   let timeout;
   return function (...args) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), delay);
   };
-}
+};
 
 const filterImages = debounce(() => {
   const searchTerm = searchBox.value.toLowerCase();
-
   imagesData.forEach((image, index) => {
     const imageElement = imageContainer.children[index];
-    const shouldDisplay = image.title.toLowerCase().includes(searchTerm);
-    imageElement.style.display = shouldDisplay ? "block" : "none";
+    imageElement.style.display = image.title.toLowerCase().includes(searchTerm) ? "block" : "none";
   });
-
   updateGridLayout();
 }, 300);
 
@@ -82,3 +92,5 @@ function updateGridLayout() {
   imageContainer.style.gridTemplateColumns = `repeat(auto-fill, 130px)`;
   imageContainer.style.gridAutoRows = "130px";
 }
+
+loadImages();
